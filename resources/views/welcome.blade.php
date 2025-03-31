@@ -15,12 +15,12 @@
 
 <body class="bg-gray-100 space-y-6 py-8">
 
-<a href="{{ LaravelLocalization::localizeUrl('login') }}">Login</a>
-<a href="{{ LaravelLocalization::localizeUrl('register') }}">Register</a>
+<a href="{{ LaravelLocalization::localizeUrl('login') }}">{{ __('messages.auth.login') }}</a>
+<a href="{{ LaravelLocalization::localizeUrl('register') }}">{{ __('messages.auth.register') }}</a>
 
 <div class="relative inline-block text-left">
     <button id="dropdownButton" type="button" class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="toggleDropdown()">
-        Language
+        {{ __('messages.language') }}
         <svg class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg>
@@ -55,41 +55,42 @@
 
 
 {{-- Hello World Component --}}
-<x-ui.card title="Hello World">
+<x-ui.card title="{{ __('messages.welcome.hello_world') }}">
     <livewire:hello-world />
 </x-ui.card>
 
 {{-- Counter Component --}}
-<x-ui.card title="Counter">
+<x-ui.card title="{{ __('messages.welcome.counter') }}">
     <livewire:counter />
 </x-ui.card>
 
 {{-- Clock Component --}}
-<x-ui.card title="Klok">
+<x-ui.card title="{{ __('messages.welcome.clock') }}">
     <livewire:clock />
 </x-ui.card>
 
-{{-- Naamformulier --}}
-<x-ui.card title="Naamformulier">
+{{-- Name Form --}}
+<x-ui.card title="{{ __('messages.welcome.name_form') }}">
     <livewire:name-form />
 </x-ui.card>
 
 {{-- Events: Parent Component --}}
-<x-ui.card title="Event: Kind stuurt bericht naar Ouder">
+<x-ui.card title="{{ __('messages.welcome.parent_child_event') }}">
     <livewire:parent-component />
 </x-ui.card>
 
-{{-- Events: Zoekcomponenten --}}
-<x-ui.card title="Event: Zoekfunctie met live query update">
+{{-- Events: Search Components --}}
+<x-ui.card title="{{ __('messages.welcome.search_function') }}">
     <livewire:search-input />
     <livewire:search-results />
 </x-ui.card>
 
 {{-- JS Event Trigger --}}
-<x-ui.card title="Event: Livewire stuurt DOM-event naar JavaScript">
+<x-ui.card title="{{ __('messages.welcome.dom_event') }}">
     <livewire:dom-event-example />
 </x-ui.card>
-<x-ui.forms.group label="E-mail" for="email" error="email">
+
+<x-ui.forms.group label="{{ __('messages.welcome.email') }}" for="email" error="email">
     <x-ui.forms.input type="email" name="email" id="email" wire:model.live="email" />
 </x-ui.forms.group>
 
