@@ -38,6 +38,7 @@ class SocialiteController extends Controller
                     'password' => Hash::make(Str::random(24)), // veiliger dan 'Password@1234'
                     'auth_provider_id' => $socialUser->id,
                     'auth_provider' => $provider,
+                    'email_verified_at' => now(),
                 ]
             );
 
