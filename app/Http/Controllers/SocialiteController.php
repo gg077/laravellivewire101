@@ -41,6 +41,19 @@ class SocialiteController extends Controller
                 ]
             );
 
+            // Check if the user was just created or not
+            if (!$user->wasRecentlyCreated) {
+                // If user exists but hasn't verified email, redirect to login page with a warning
+                if (!$user->hasVerifiedEmail()) {
+                    return redirect()->route('login')->with('warning', 'Please verify your email address first');
+                }
+                // Update social provider details for existing user
+                $user->update([
+                    'auth_provider_id' => $socialUser->id,
+                    'auth_provider' => $provider,
+                ]);
+            }
+
             Auth::login($user);
 
             return redirect()->route('dashboard');

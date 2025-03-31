@@ -76,6 +76,13 @@ new #[Layout('components.layouts.auth')] class extends Component {
 <div class="flex flex-col gap-6">
     <x-auth-header :title="__('Log in to your account')" :description="__('Enter your email and password below to log in')" />
 
+    <!-- Display the warning message if available -->
+    @if(session('warning'))
+        <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-4">
+            <p><strong>Warning:</strong> {{ session('warning') }}</p>
+        </div>
+    @endif
+
     <!-- Session Status -->
     <x-auth-session-status class="text-center" :status="session('status')" />
 

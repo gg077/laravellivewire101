@@ -15,6 +15,9 @@
 
 <body class="bg-gray-100 space-y-6 py-8">
 
+<a href="http://localhost:8000/login">Login</a>
+<a href="http://localhost:8000/register">Register</a>
+
 {{-- Hello World Component --}}
 <x-ui.card title="Hello World">
     <livewire:hello-world />
