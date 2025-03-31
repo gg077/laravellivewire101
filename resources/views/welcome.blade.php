@@ -15,8 +15,8 @@
 
 <body class="bg-gray-100 space-y-6 py-8">
 
-<a href="{{ LaravelLocalization::localizeUrl('login') }}">{{ __('messages.auth.login') }}</a>
-<a href="{{ LaravelLocalization::localizeUrl('register') }}">{{ __('messages.auth.register') }}</a>
+<a href="{{ LaravelLocalization::localizeUrl('login') }}">{{ __('auth.login') }}</a>
+<a href="{{ LaravelLocalization::localizeUrl('register') }}">{{ __('auth.register') }}</a>
 
 <div class="relative inline-block text-left">
     <button id="dropdownButton" type="button" class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="toggleDropdown()">
@@ -55,42 +55,42 @@
 
 
 {{-- Hello World Component --}}
-<x-ui.card title="{{ __('messages.welcome.hello_world') }}">
+<x-ui.card title="{{ __('pages.welcome.hello_world') }}">
     <livewire:hello-world />
 </x-ui.card>
 
 {{-- Counter Component --}}
-<x-ui.card title="{{ __('messages.welcome.counter') }}">
+<x-ui.card title="{{ __('pages.welcome.counter') }}">
     <livewire:counter />
 </x-ui.card>
 
 {{-- Clock Component --}}
-<x-ui.card title="{{ __('messages.welcome.clock') }}">
+<x-ui.card title="{{ __('pages.welcome.clock') }}">
     <livewire:clock />
 </x-ui.card>
 
 {{-- Name Form --}}
-<x-ui.card title="{{ __('messages.welcome.name_form') }}">
+<x-ui.card title="{{ __('pages.welcome.name_form') }}">
     <livewire:name-form />
 </x-ui.card>
 
 {{-- Events: Parent Component --}}
-<x-ui.card title="{{ __('messages.welcome.parent_child_event') }}">
+<x-ui.card title="{{ __('pages.welcome.parent_child_event') }}">
     <livewire:parent-component />
 </x-ui.card>
 
 {{-- Events: Search Components --}}
-<x-ui.card title="{{ __('messages.welcome.search_function') }}">
+<x-ui.card title="{{ __('pages.welcome.search_function') }}">
     <livewire:search-input />
     <livewire:search-results />
 </x-ui.card>
 
 {{-- JS Event Trigger --}}
-<x-ui.card title="{{ __('messages.welcome.dom_event') }}">
+<x-ui.card title="{{ __('pages.welcome.dom_event') }}">
     <livewire:dom-event-example />
 </x-ui.card>
 
-<x-ui.forms.group label="{{ __('messages.welcome.email') }}" for="email" error="email">
+<x-ui.forms.group label="{{ __('pages.welcome.email') }}" for="email" error="email">
     <x-ui.forms.input type="email" name="email" id="email" wire:model.live="email" />
 </x-ui.forms.group>
 
