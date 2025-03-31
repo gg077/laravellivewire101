@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('google_id')->nullable();
+            $table->string('auth_provider_id')->nullable();  // Changed this to match the controller's use of `auth_provider_id`
+            $table->string('auth_provider')->nullable();  // Added this field to store the provider (e.g., Google, GitHub)
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

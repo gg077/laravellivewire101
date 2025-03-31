@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Exception;
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -13,7 +14,7 @@ class SocialiteController extends Controller
 {
     public function authProviderRedirect(string $provider)
     {
-        abort_unless(in_array($provider, ['google']), 404); // beveiligd: alleen toegestane providers
+        abort_unless(in_array($provider, ['google', 'github']), 404); // beveiligd: alleen toegestane providers
 
         return Socialite::driver($provider)->redirect();
     }
@@ -21,9 +22,14 @@ class SocialiteController extends Controller
     public function socialAuthentication(string $provider)
     {
         try {
-            abort_unless(in_array($provider, ['google']), 404); // zelfde check
+            abort_unless(in_array($provider, ['google', 'github']), 404); // zelfde check
 
-            $socialUser = Socialite::driver($provider)->stateless()->user();
+            $socialUser = Socialite::driver($provider)
+                ->setHttpClient(new Client([
+                    'verify' => false // SSL verification disabled
+                ]))
+                ->stateless()
+                ->user();
 
             $user = User::firstOrCreate(
                 ['email' => $socialUser->email],
