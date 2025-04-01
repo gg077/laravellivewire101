@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             CategorySeeder::class,
             PostSeeder::class,
+            SeoSeeder::class,
         ]);
 
         // Dan de permissions aanmaken en toekennen
