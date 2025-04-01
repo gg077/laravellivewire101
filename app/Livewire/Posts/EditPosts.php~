@@ -8,7 +8,7 @@ use Livewire\Component;
 use Illuminate\Support\Str;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-class EditPost extends Component
+class EditPosts extends Component
 {
     public Post $post;
     public $currentLanguage = 'en';
@@ -48,15 +48,6 @@ class EditPost extends Component
         'title_nl.min' => 'The Dutch title must be at least 3 characters long.',
         'title_fr.required' => 'The French title is required.',
         'title_fr.min' => 'The French title must be at least 3 characters long.',
-        'slug_en.required' => 'The English slug is required.',
-        'slug_en.min' => 'The English slug must be at least 3 characters.',
-        'slug_en.unique' => 'The English slug must be unique.',
-        'slug_nl.required' => 'The Dutch slug is required.',
-        'slug_nl.min' => 'The Dutch slug must be at least 3 characters.',
-        'slug_nl.unique' => 'The Dutch slug must be unique.',
-        'slug_fr.required' => 'The French slug is required.',
-        'slug_fr.min' => 'The French slug must be at least 3 characters.',
-        'slug_fr.unique' => 'The French slug must be unique.',
         'content_en.required' => 'The English content is required.',
         'content_en.min' => 'The English content must be at least 10 characters long.',
         'content_nl.required' => 'The Dutch content is required.',

@@ -12,9 +12,15 @@ class Post extends Model
 
     protected $fillable = [
         'author_id',
-        'title',
-        'content',
-        'slug',
+        'title_en',
+        'title_nl',
+        'title_fr',
+        'content_en',
+        'content_nl',
+        'content_fr',
+        'slug_en',
+        'slug_nl',
+        'slug_fr',
         'is_published',
     ];
 
