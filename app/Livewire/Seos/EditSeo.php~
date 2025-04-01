@@ -1,0 +1,53 @@
+<?php
+
+namespace App\Livewire\Seos;
+
+use App\Models\Seo;
+use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
+
+class EditSeo extends Component
+{
+    public Seo $seo;
+    public string $field;
+    public array $translations = [
+        'nl' => '',
+        'fr' => '',
+        'en' => ''
+    ];
+
+    protected $rules = [
+        'translations.nl' => 'required',
+        'translations.fr' => 'required',
+        'translations.en' => 'required',
+    ];
+
+    public function mount(Seo $seo, string $field)
+    {
+        $this->seo = $seo;
+        $this->field = $field;
+        $this->translations['nl'] = $seo->getTranslation($field, 'nl');
+        $this->translations['fr'] = $seo->getTranslation($field, 'fr');
+        $this->translations['en'] = $seo->getTranslation($field, 'en');
+    }
+
+    public function save()
+    {
+        $this->validate();
+
+        $this->seo->setTranslation($this->field, 'nl', $this->translations['nl']);
+        $this->seo->setTranslation($this->field, 'fr', $this->translations['fr']);
+        $this->seo->setTranslation($this->field, 'en', $this->translations['en']);
+        $this->seo->save();
+
+        session()->flash('message', __('SEO field successfully updated.'));
+        session()->flash('message_type', 'success');
+
+        return redirect()->route('seos.index');
+    }
+
+    public function render()
+    {
+        return view('livewire.seos.edit-seo');
+    }
+}
