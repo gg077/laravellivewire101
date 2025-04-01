@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\SocialiteController;
 use App\Livewire\Users\ShowUsers;
 use App\Livewire\Users\CreateUser;
 use App\Livewire\Users\EditUser;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use Livewire\Volt\Volt;
 
 Route::get('/', function () {
@@ -18,10 +21,10 @@ Route::controller(SocialiteController::class)->group(function() {
     Route::get('auth/{provider}/callback', 'socialAuthentication')->name('auth.callback');
 });
 
-
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
@@ -47,6 +50,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/categories', \App\Livewire\Categories\ShowCategory::class)->name('categories.index');
     Route::get('/categories/create', \App\Livewire\Categories\CreateCategory::class)->name('categories.create');
     Route::get('/categories/{category}/edit', \App\Livewire\Categories\EditCategory::class)->name('categories.edit');
+
+    //language
+    Route::get('change', [LanguageController::class, 'change'])->name('lang.change');
 });
 
 require __DIR__.'/auth.php';
