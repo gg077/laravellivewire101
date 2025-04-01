@@ -6,6 +6,7 @@ use App\Livewire\Categories\EditCategory;
 use App\Livewire\Categories\ShowCategory;
 use App\Livewire\Posts\CreatePost;
 use App\Livewire\Posts\EditPost;
+use App\Livewire\Posts\ShowPost;
 use App\Livewire\Posts\ShowPosts;
 use App\Livewire\Seos\ShowSeos;
 use App\Livewire\Seos\EditSeo;
@@ -61,6 +62,7 @@ Route::group([
         Route::get('/posts', ShowPosts::class)->name('posts.index');
         Route::get('/posts/create', CreatePost::class)->name('posts.create');
         Route::get('/posts/{post}/edit', EditPost::class)->name('posts.edit');
+        Route::get('/posts/{post}', ShowPost::class)->name('post.show');
 
         // seo routes
         Route::get('/seos', ShowSeos::class)->name('seos.index');
