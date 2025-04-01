@@ -4,9 +4,11 @@ use App\Http\Controllers\SocialiteController;
 use App\Livewire\Categories\CreateCategory;
 use App\Livewire\Categories\EditCategory;
 use App\Livewire\Categories\ShowCategory;
-use App\Livewire\Posts\CreatePosts;
-use App\Livewire\Posts\EditPosts;
+use App\Livewire\Posts\CreatePost;
+use App\Livewire\Posts\EditPost;
 use App\Livewire\Posts\ShowPosts;
+use App\Livewire\Seos\ShowSeos;
+use App\Livewire\Seos\EditSeo;
 use App\Livewire\Roles\CreateRole;
 use App\Livewire\Roles\EditRole;
 use App\Livewire\Roles\ShowRoles;
@@ -57,8 +59,12 @@ Route::group([
 
         // posts routes
         Route::get('/posts', ShowPosts::class)->name('posts.index');
-        Route::get('/posts/create', CreatePosts::class)->name('posts.create');
-        Route::get('/posts/{post}/edit', EditPosts::class)->name('posts.edit');
+        Route::get('/posts/create', CreatePost::class)->name('posts.create');
+        Route::get('/posts/{post}/edit', EditPost::class)->name('posts.edit');
+
+        // seo routes
+        Route::get('/seos', ShowSeos::class)->name('seos.index');
+        Route::get('/seos/{seo}/edit', EditSeo::class)->name('seos.edit');
 
 
         // Category routes

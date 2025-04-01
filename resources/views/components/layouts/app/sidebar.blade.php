@@ -85,6 +85,14 @@
             >
                 {{ __('posts') }}
             </flux:navlist.item>
+            <flux:navlist.item
+                icon="document-magnifying-glass"
+                :href="route('seos.index')"
+                :current="request()->routeIs('seos.index')"
+                wire:navigate
+            >
+                {{ __('seo') }}
+            </flux:navlist.item>
 
             <flux:spacer />
 
