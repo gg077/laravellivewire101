@@ -74,7 +74,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
 }; ?>
 
 <div class="flex flex-col gap-6">
-    <x-auth-header :title="__('Log in to your account')" :description="__('Enter your email and password below to log in')" />
+    <x-auth-header :title="__('messages.Log in to your account')" :description="__('messages.Enter your email and password below to log in')" />
 
     <!-- Session Status -->
     <x-auth-session-status class="text-center" :status="session('status')" />
@@ -83,7 +83,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
         <!-- Email Address -->
         <flux:input
             wire:model="email"
-            :label="__('Email address')"
+            :label="__('messages.Email address')"
             type="email"
             required
             autofocus
@@ -95,16 +95,16 @@ new #[Layout('components.layouts.auth')] class extends Component {
         <div class="relative">
             <flux:input
                 wire:model="password"
-                :label="__('Password')"
+                :label="__('messages.Password')"
                 type="password"
                 required
                 autocomplete="current-password"
-                :placeholder="__('Password')"
+                :placeholder="__('messages.Password')"
             />
 
             @if (Route::has('password.request'))
                 <flux:link class="absolute right-0 top-0 text-sm" :href="route('password.request')" wire:navigate>
-                    {{ __('Forgot your password?') }}
+                    {{ __('messages.Forgot your password?') }}
                 </flux:link>
             @endif
         </div>
@@ -114,7 +114,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
 
         <div class="flex items-center justify-end">
             <flux:button variant="primary" type="submit" class="w-full">
-                {{ __('Log in') }}
+                {{ __('messages.Log in') }}
             </flux:button>
         </div>
     </form>
@@ -133,7 +133,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
                 <svg class="w-5 h-5" viewBox="0 0 488 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="..."></path>
                 </svg>
-                Log in met Google
+                {{ __('messages.Log in with Google') }}
             </flux:button>
 
         </a>
@@ -141,8 +141,8 @@ new #[Layout('components.layouts.auth')] class extends Component {
 
     @if (Route::has('register'))
         <div class="space-x-1 text-center text-sm text-zinc-600 dark:text-zinc-400">
-            {{ __('Don\'t have an account?') }}
-            <flux:link :href="route('register')" wire:navigate>{{ __('Sign up') }}</flux:link>
+            {{ __('messages.Don\'t have an account?') }}
+            <flux:link :href="route('register')" wire:navigate>{{ __('messages.Sign up') }}</flux:link>
         </div>
     @endif
 </div>
