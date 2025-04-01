@@ -37,7 +37,7 @@
 
                     {{-- Inhoud in plaats van slug --}}
                     <td class="px-4 py-3 text-sm text-gray-500 dark:text-gray-300">
-                        {{ Str::limit($post['content_'.$currentLanguage], 100) }}
+                        {{ Str::limit($post->content, 100) }}
                     </td>
 
                     <td class="px-4 py-3 text-sm">
