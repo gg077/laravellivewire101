@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
+
+class ExportTranslations extends Command
+{
+    protected $signature = 'translations:export';
+    protected $description = 'Exporteer PHP-vertalingen naar JSON-bestanden in de root lang-map';
+
+    public function handle()
+    {
+        $languages = ['nl', 'fr', 'en']; // Voeg extra talen toe indien nodig
+        foreach ($languages as $lang) {
+            $path = base_path("lang/{$lang}");
+            $translations = [];
+
+            if (File::exists($path)) {
+                foreach (File::allFiles($path) as $file) {
+                    $filename = pathinfo($file, PATHINFO_FILENAME);
+                    $translations[$filename] = require $file;
+                }
+            }
+
+            // **Zorg ervoor dat de lang-map in de root bestaat**
+            $langDir = base_path("lang");
+            if (!File::exists($langDir)) {
+                File::makeDirectory($langDir, 0755, true);
+            }
+
+            // **Zorg ervoor dat het JSON-bestand kan worden geschreven**
+            $jsonPath = base_path("lang/{$lang}.json");
+            File::put($jsonPath, json_encode($translations, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
+            $this->info("Exported translations to {$jsonPath}");
+        }
+    }
+}
