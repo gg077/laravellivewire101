@@ -1,13 +1,6 @@
 <?php
 
 return [
-<<<<<<< HEAD
-    //App name
-    "app_name" => "Laravel",
-
-    //Welcome
-    'language' => 'Language',
-=======
     // Navigation
     "Dashboard" => "Dashboard",
     "Gebruikers" => "Users",
@@ -213,5 +206,4 @@ return [
 
 
 
->>>>>>> origin/experimentA
 ];
