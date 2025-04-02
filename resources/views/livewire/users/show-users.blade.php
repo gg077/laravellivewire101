@@ -3,10 +3,10 @@
 <div class="p-6">
     <div class="flex justify-between items-center mb-4">
         <div class="flex items-center space-x-4">
-            <h2 class="text-2xl font-semibold">Gebruikersoverzicht</h2>
+            <h2 class="text-2xl font-semibold">{{ __('messages.Gebruikersoverzicht') }}</h2>
             <label class="inline-flex items-center">
                 <input type="checkbox" wire:model.live="showDeleted" class="form-checkbox h-4 w-4 text-blue-600">
-                <span class="ml-2 text-sm text-gray-700">Toon verwijderde gebruikers</span>
+                <span class="ml-2 text-sm text-gray-700">{{ __('messages.Toon verwijderde gebruikers') }}</span>
             </label>
         </div>
 
@@ -39,7 +39,7 @@
         <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <span class="text-sm text-gray-700">Exporteer gebruikers:</span>
+                    <span class="text-sm text-gray-700">{{ __('messages.Exporteer gebruikers:') }}</span>
                     <div class="flex space-x-2">
                         <button wire:click="exportCsv"
                                 class="inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
@@ -53,8 +53,7 @@
                 </div>
                 @if($can['create'])
                     <a href="{{ route('users.create') }}"
-                       class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        Nieuwe gebruiker
+                       class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">{{ __('messages.Nieuwe gebruiker') }}
                     </a>
                 @endif
             </div>
@@ -66,28 +65,28 @@
                 <div class="flex items-center justify-between">
                     <div class="flex items-center space-x-4">
                         <span class="text-sm text-gray-700">
-                            {{ count($selectedUsers) }} gebruikers geselecteerd
+                            {{ count($selectedUsers) }} {{ __('messages.gebruikers geselecteerd') }}
                         </span>
                         <div class="flex space-x-2">
                             @if($can['delete'])
                                 <button wire:click="bulkDelete" wire:confirm="Weet je zeker dat je de geselecteerde gebruikers wilt verwijderen?" class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                                    Verwijderen
+                                    {{ __('messages.Verwijderen') }}
                                 </button>
                             @endif
                             @if($showDeleted && $can['restore'])
                                 <button wire:click="bulkRestore" wire:confirm="Weet je zeker dat je de geselecteerde gebruikers wilt herstellen?" class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-                                    Herstellen
+                                    {{ __('messages.Herstellen') }}
                                 </button>
                                 @if($can['forceDelete'])
                                     <button wire:click="bulkForceDelete" wire:confirm="Weet je zeker dat je de geselecteerde gebruikers permanent wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt." class="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-white bg-red-800 hover:bg-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-800">
-                                        Permanent verwijderen
+                                        {{ __('messages.Permanent verwijderen') }}
                                     </button>
                                 @endif
                             @endif
                         </div>
                     </div>
                     <button wire:click="$set('selectedUsers', [])" class="text-sm text-gray-500 hover:text-gray-700">
-                        Selectie opheffen
+                        {{ __('messages.Selectie opheffen') }}
                     </button>
                 </div>
             </div>
@@ -99,12 +98,12 @@
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         <div class="flex items-center">
                             <input type="checkbox" wire:model.live="selectAll" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                            <span class="ml-2">Selecteer</span>
+                            <span class="ml-2">{{ __('messages.Selecteer') }}</span>
                         </div>
                     </th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         <button wire:click="sortBy('name')" class="flex items-center space-x-1 hover:text-gray-700 group">
-                            <span>Naam</span>
+                            <span>{{ __('messages.Naam') }}</span>
                             <div class="flex flex-col">
                                 <svg class="w-3 h-3 {{ $sortField === 'name' && $sortDirection === 'asc' ? 'text-blue-500' : 'text-gray-400 group-hover:text-gray-600' }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
@@ -120,7 +119,7 @@
                     </th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         <button wire:click="sortBy('email')" class="flex items-center space-x-1 hover:text-gray-700 group">
-                            <span>E-mailadres</span>
+                            <span>{{ __('messages.E-mailadres') }}</span>
                             <div class="flex flex-col">
                                 <svg class="w-3 h-3 {{ $sortField === 'email' && $sortDirection === 'asc' ? 'text-blue-500' : 'text-gray-400 group-hover:text-gray-600' }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
@@ -136,7 +135,7 @@
                     </th>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         <button wire:click="sortBy('created_at')" class="flex items-center space-x-1 hover:text-gray-700 group">
-                            <span>Geregistreerd op</span>
+                            <span>{{ __('messages.Geregistreerd op') }}</span>
                             <div class="flex flex-col">
                                 <svg class="w-3 h-3 {{ $sortField === 'created_at' && $sortDirection === 'asc' ? 'text-blue-500' : 'text-gray-400 group-hover:text-gray-600' }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
@@ -150,8 +149,8 @@
                             @endif
                         </button>
                     </th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rollen</th>
-                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Acties</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('messages.Rollen') }}</th>
+                    <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">{{ __('messages.Acties') }}</th>
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
@@ -229,44 +228,44 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
                                             </svg>
                                         </button>
-                                        
-                                        <div x-show="open" 
+
+                                        <div x-show="open"
                                              @click.away="open = false"
                                              class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
                                             <div class="py-1" role="menu">
                                                 @if($can['edit'])
                                                     <!-- Inline edit optie -->
-                                                    <button wire:click="startEditing({{ $user->id }})" 
+                                                    <button wire:click="startEditing({{ $user->id }})"
                                                             class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
                                                             role="menuitem">
                                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                                         </svg>
-                                                        <span>Snel bewerken</span>
+                                                        <span>{{ __('messages.Snel bewerken') }}</span>
                                                     </button>
-                                                    
+
                                                     <!-- Volledige edit optie -->
-                                                    <a href="{{ route('users.edit', $user) }}" 
+                                                    <a href="{{ route('users.edit', $user) }}"
                                                        class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center space-x-2"
                                                        role="menuitem">
                                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                                         </svg>
-                                                        <span>Volledig bewerken</span>
+                                                        <span>{{ __('messages.Volledig bewerken') }}</span>
                                                     </a>
                                                 @endif
-                                                
+
                                                 @if($can['delete'])
                                                     <!-- Verwijder optie -->
-                                                    <button wire:click="delete({{ $user->id }})" 
+                                                    <button wire:click="delete({{ $user->id }})"
                                                             wire:confirm="Weet je zeker dat je deze gebruiker wilt verwijderen?"
                                                             class="w-full text-left px-4 py-2 text-sm text-red-700 hover:bg-gray-100 flex items-center space-x-2"
                                                             role="menuitem">
                                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                         </svg>
-                                                        <span>Verwijderen</span>
+                                                        <span>{{ __('messages.Verwijderen') }}</span>
                                                     </button>
                                                 @endif
                                             </div>
@@ -279,7 +278,7 @@
                 @empty
                     <tr>
                         <td colspan="5" class="px-6 py-4 text-center text-sm text-gray-500">
-                            Geen gebruikers gevonden.
+                            {{ __('messages.Geen gebruikers gevonden.') }}
                         </td>
                     </tr>
                 @endforelse

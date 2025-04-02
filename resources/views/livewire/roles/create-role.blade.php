@@ -1,7 +1,7 @@
 <div>
     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
         @if (session()->has('message'))
-            <x-ui.flash-message 
+            <x-ui.flash-message
                 :message="session('message')"
                 :type="session('message_type', 'success')"
             />
@@ -10,9 +10,9 @@
         <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
                 <div class="px-4 sm:px-0">
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">{{ __('Nieuwe Rol') }}</h3>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">{{ __('messages.Nieuwe Rol') }}</h3>
                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                        {{ __('Maak een nieuwe rol aan voor het systeem.') }}
+                        {{ __('messages.Maak een nieuwe rol aan voor het systeem.') }}
                     </p>
                 </div>
             </div>
@@ -22,19 +22,19 @@
                     <div class="px-4 py-5 bg-white dark:bg-gray-800 sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md">
                         <div class="grid grid-cols-6 gap-6">
                             <div class="col-span-6 sm:col-span-4">
-                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ __('Naam') }}</label>
-                                <input type="text" 
-                                    wire:model="name" 
-                                    id="name" 
-                                    class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ __('messages.Naam') }}</label>
+                                <input type="text"
+                                       wire:model="name"
+                                       id="name"
+                                       class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                 >
                                 <x-ui.forms.error error="name" />
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
-                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ __('Icoon') }}</label>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ __('messages.Icoon') }}</label>
                                 <div class="relative">
-                                    <button 
+                                    <button
                                         type="button"
                                         wire:click="toggleIconPicker"
                                         class="w-full flex items-center gap-2 px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm text-left focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -45,7 +45,7 @@
                                             </svg>
                                             <span class="text-gray-900 dark:text-white">{{ Str::title(str_replace('-', ' ', $selectedIcon['name'])) }}</span>
                                         @else
-                                            <span class="text-gray-500">{{ __('Selecteer een icoon') }}</span>
+                                            <span class="text-gray-500">{{ __('messages.Selecteer een icoon') }}</span>
                                         @endif
                                         <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z" clip-rule="evenodd" />
@@ -59,7 +59,7 @@
                                                     type="text"
                                                     wire:model.live="search"
                                                     class="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-900 dark:text-white"
-                                                    placeholder="{{ __('Zoek een icoon...') }}"
+                                                    placeholder="{{ __('messages.Zoek een icoon...') }}"
                                                 >
                                             </div>
                                             <div class="max-h-60 overflow-y-auto p-2">
@@ -88,10 +88,10 @@
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
-                                <label for="guard_name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ __('Guard') }}</label>
-                                <select 
-                                    wire:model="guard_name" 
-                                    id="guard_name" 
+                                <label for="guard_name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ __('messages.Guard') }}</label>
+                                <select
+                                    wire:model="guard_name"
+                                    id="guard_name"
                                     class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                 >
                                     <option value="web">Web</option>
@@ -104,11 +104,11 @@
 
                     <div class="flex items-center justify-end px-4 py-3 bg-gray-50 dark:bg-gray-800 text-right sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">
                         <x-ui.button type="submit">
-                            {{ __('Opslaan') }}
+                            {{ __('messages.Opslaan') }}
                         </x-ui.button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</div> 
+</div>
