@@ -144,6 +144,7 @@ return [
     // Edit posts
     'Post Bewerken' => 'Bericht bewerken',
     'Geschreven door' => 'Geschreven door',
+    'Laatst bijgewerkt op' => 'Laatst bijgewerkt op',
     'Slug' => 'Slug',
     'Inhoud' => 'Inhoud',
 

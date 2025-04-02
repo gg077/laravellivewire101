@@ -48,11 +48,14 @@ class SocialiteController extends Controller
                 if (!$user->hasVerifiedEmail()) {
                     return redirect()->route('login')->with('warning', 'Please verify your email address first');
                 }
+
                 // Update social provider details for existing user
                 $user->update([
                     'auth_provider_id' => $socialUser->id,
                     'auth_provider' => $provider,
                 ]);
+            } else {
+                $user->assignRole('viewer');
             }
 
             Auth::login($user);
