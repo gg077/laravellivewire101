@@ -157,8 +157,12 @@
         </div>
 
         {{-- Aanmaken --}}
-        <div class="flex justify-end">
-            <x-ui.button type="submit">
+        <div class="flex justify-end gap-4 mt-6">
+            <x-ui.button type="button" wire:click="generateContent" class="px-6 py-2">
+                {{ __('messages.Genereer Inhoud met AI') }}
+            </x-ui.button>
+
+            <x-ui.button type="submit" class="px-6 py-2">
                 {{ __('messages.Aanmaken') }}
             </x-ui.button>
         </div>
