@@ -4,7 +4,7 @@ This package provides an Artisan command to import translations from Excel files
 
 ## Overview
 
-The `translations:import` command imports translations from an Excel spreadsheet and saves them as JSON files in your Laravel application's `lang/{$lang}` directory. This streamlines the translation management process for multilingual applications.
+The `translations:import` command imports translations from an Excel spreadsheet and saves them as JSON files in your Laravel application's `lang/` directory. This streamlines the translation management process for multilingual applications.
 
 ## Installation
 
@@ -102,8 +102,8 @@ class TranslationsImport implements ToArray
                 $key = trim($row[1]);   // Translation key (e.g., "welcome_message")
                 $value = trim($row[2]); // Translated text (e.g., "Welkom!")
 
-                // Path to the JSON file in the root lang/{$lang}/ directory
-                $jsonPath = base_path("lang/{$lang}/{$lang}.json");
+                // Path to the JSON file in the root lang/ directory
+                $jsonPath = base_path("lang/{$lang}.json");
 
                 // Check if the file already exists and load existing translations
                 $translations = File::exists($jsonPath)
@@ -135,7 +135,6 @@ Your Excel file should have the following column structure:
 
 | Column 1 | Column 2 | Column 3 |
 |---------|---------|---------|
-| Language Code | Translation Key | Translated Text |
 | en | welcome | Welcome to our application |
 | en | goodbye | Goodbye |
 | nl | welcome | Welkom bij onze applicatie |
@@ -159,9 +158,9 @@ The import command:
 4. Creates or updates JSON translation files for each language in the root lang/{$lang} directory
 
 For example, if your Excel contains translations for English (en), Dutch (nl), and French (fr), the command will create:
-- `lang/en/en.json`
-- `lang/nl/nl.json`
-- `lang/fr/fr.json`
+- `lang/en.json`
+- `lang/nl.json`
+- `lang/fr.json`
 
 Each file will contain all translation keys for that language in a single JSON object:
 

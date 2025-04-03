@@ -41,7 +41,7 @@ class ExportTranslations extends Command
             }
 
             // Define the JSON file path for the exported translations
-            $jsonPath = "{$langPath}/{$lang}/{$lang}.json";
+            $jsonPath = "{$langPath}/{$lang}.json";
 
             // Write the translations to the JSON file
             File::put($jsonPath, json_encode($translations, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));

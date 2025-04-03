@@ -81,7 +81,7 @@ class ExportTranslations extends Command
             }
 
             // Define the JSON file path for the exported translations
-            $jsonPath = "{$langPath}/{$lang}/{$lang}.json";
+            $jsonPath = "{$langPath}/{$lang}.json";
 
             // Write the translations to the JSON file with pretty formatting
             File::put($jsonPath, json_encode($translations, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
@@ -115,7 +115,7 @@ The command performs the following actions:
 3. For each language:
     - Reads all PHP translation files
     - Combines translations into a single JSON structure
-    - Exports a JSON file to `lang/{language}/{language}.json`
+    - Exports a JSON file to `lang/{language}.json`
 
 ## Example
 
@@ -135,14 +135,14 @@ After running the command, you'll get:
 
 ```
 /lang
+  en.json  <-- New file with combined translations
+  nl.json  <-- New file with combined translations
   /en
     messages.php
     validation.php
-    en.json  <-- New file with combined translations
   /nl
     messages.php
     validation.php
-    nl.json  <-- New file with combined translations
 ```
 
 The JSON files will contain all translations in a structured format:
