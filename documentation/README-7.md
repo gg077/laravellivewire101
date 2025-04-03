@@ -4,7 +4,7 @@ This package provides an Artisan command to import translations from Excel files
 
 ## Overview
 
-The `translations:import` command imports translations from an Excel spreadsheet and saves them as JSON files in your Laravel application's `lang/` directory. This streamlines the translation management process for multilingual applications.
+The `translations:import` command imports translations from an Excel spreadsheet and saves them as PHP files in your Laravel application's `lang/` directory. This streamlines the translation management process for multilingual applications.
 
 ## Installation
 
@@ -98,23 +98,32 @@ class TranslationsImport implements ToArray
     {
         foreach ($rows as $row) {
             if (isset($row[0], $row[1], $row[2])) {
-                $lang = trim($row[0]);  // Language code (e.g., "nl", "fr", "en")
-                $key = trim($row[1]);   // Translation key (e.g., "welcome_message")
+                $lang = trim($row[0]); // Language code (e.g., "nl", "fr", "en")
+                $key = trim($row[1]);  // Translation key (e.g., "welcome_message")
                 $value = trim($row[2]); // Translated text (e.g., "Welkom!")
 
-                // Path to the JSON file in the root lang/ directory
-                $jsonPath = base_path("lang/{$lang}.json");
+                // Path to the PHP file in the lang/{lang}/ directory
+                $langDirectory = base_path("lang/{$lang}");
+                $phpPath = "{$langDirectory}/imports.php";
+
+                // Create the directory if it doesn't exist
+                if (!File::exists($langDirectory)) {
+                    File::makeDirectory($langDirectory, 0755, true);
+                }
 
                 // Check if the file already exists and load existing translations
-                $translations = File::exists($jsonPath)
-                    ? json_decode(File::get($jsonPath), true)
+                $translations = File::exists($phpPath)
+                    ? require $phpPath
                     : [];
 
                 // Add the new translation
                 $translations[$key] = $value;
 
-                // Save the updated translations as JSON
-                File::put($jsonPath, json_encode($translations, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+                // Generate PHP code for the translations
+                $phpContent = "<?php\n\nreturn " . var_export($translations, true) . ";\n";
+
+                // Save the updated translations as PHP
+                File::put($phpPath, $phpContent);
             }
         }
     }
@@ -155,21 +164,23 @@ The import command:
 1. Reads the provided Excel file
 2. Processes each row as a translation entry
 3. Groups translations by language code
-4. Creates or updates JSON translation files for each language in the root lang/{$lang} directory
+4. Creates or updates PHP translation files for each language in the `lang/{$lang}/` directories
 
 For example, if your Excel contains translations for English (en), Dutch (nl), and French (fr), the command will create:
-- `lang/en.json`
-- `lang/nl.json`
-- `lang/fr.json`
+- `lang/en/imports.php`
+- `lang/nl/imports.php`
+- `lang/fr/imports.php`
 
-Each file will contain all translation keys for that language in a single JSON object:
+Each file will contain all translation keys for that language in a PHP array format:
 
-```json
-{
-    "welcome": "Welcome to our application",
-    "goodbye": "Goodbye",
-    "login": "Login"
-}
+```php
+<?php
+
+return array(
+  'welcome' => 'Welcome to our application',
+  'goodbye' => 'Goodbye',
+  'login' => 'Login',
+);
 ```
 
 ## Benefits
@@ -177,7 +188,7 @@ Each file will contain all translation keys for that language in a single JSON o
 - **Streamlined Workflow**: Update translations in Excel and import with a single command
 - **Team Collaboration**: Share Excel files with translators who don't need access to code
 - **Batch Updates**: Manage thousands of translations simultaneously
-- **Frontend Integration**: JSON files are ready for JavaScript applications
+- **Laravel Integration**: PHP files integrate seamlessly with Laravel's translation system
 
 ## Requirements
 
