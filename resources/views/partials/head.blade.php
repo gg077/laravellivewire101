@@ -9,6 +9,7 @@
 
     $keywords = DB::table('seos')->where('id', 2)->first();
     $keyword = $keywords->$locale ?? 'Laravel, web application, PHP, MVC, routing, database, authentication, API, Laravel framework, backend, frontend, web development, RESTful, Eloquent ORM, Blade, security, session management, caching, queues';
+
 @endphp
 
 <meta charset="utf-8" />
@@ -18,11 +19,21 @@
 <meta name="description" content="{{ $description }}">
 <meta name="keywords" content="{{ $keyword }}">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="{{ url()->current() }}" />
 
-{{-- Language --}}
+{{-- Set canonical URL --}}
+<link rel="canonical" href="{{ LaravelLocalization::getNonLocalizedURL() }}">
+
+{{-- Add hreflang attributes for all supported languages --}}
+@foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+    <link rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+@endforeach
+
+{{-- Add x-default hreflang attribute --}}
+<link rel="alternate" hreflang="x-default" href="{{ LaravelLocalization::getLocalizedURL(config('app.fallback_locale'), null, [], true) }}">
+
+{{-- Set content language meta tag --}}
 <meta http-equiv="Content-Language" content="{{ str_replace('_', '-', app()->getLocale()) }}">
-<link rel="alternate" hreflang="x-default" href="{{ url()->current() }}">
+
 
 <title>{{ $title ?? 'Laravel' }}</title>
 

@@ -258,12 +258,36 @@ Or with variables:
 
 4. **Test all locales**: Make sure your application works correctly in all supported languages.
 
-5. **Consider SEO implications**: Use hreflang tags for multilingual SEO:
-   ```html
+5. **Consider SEO implications**: Implement proper SEO tags for multilingual sites in your layout:
+
+   ```php
+   {{-- Set canonical URL --}}
+   <link rel="canonical" href="{{ LaravelLocalization::getNonLocalizedURL() }}">
+   
+   {{-- Add hreflang attributes for all supported languages --}}
    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
        <link rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
    @endforeach
+   
+   {{-- Add x-default hreflang attribute --}}
+   <link rel="alternate" hreflang="x-default" href="{{ LaravelLocalization::getLocalizedURL(config('app.fallback_locale'), null, [], true) }}">
+   
+   {{-- Set content language meta tag --}}
+   <meta http-equiv="Content-Language" content="{{ str_replace('_', '-', app()->getLocale()) }}">
+   
+   {{-- Localized meta descriptions and keywords --}}
+   @php
+       $locale = LaravelLocalization::getCurrentLocale();
+       // Get localized descriptions from database
+       $description = $descriptions->$locale ?? 'Default description';
+       $keyword = $keywords->$locale ?? 'Default keywords';
+   @endphp
+   
+   <meta name="description" content="{{ $description }}">
+   <meta name="keywords" content="{{ $keyword }}">
    ```
+
+   This implementation helps search engines understand your multilingual structure and serves the correct language version to users.
 
 ## Troubleshooting
 
