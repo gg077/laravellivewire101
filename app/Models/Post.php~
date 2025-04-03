@@ -15,15 +15,12 @@ class Post extends Model
         'title_en',
         'title_nl',
         'title_fr',
-        'title_es',
         'content_en',
         'content_nl',
         'content_fr',
-        'content_es',
         'slug_en',
         'slug_nl',
         'slug_fr',
-        'slug_es',
         'is_published',
     ];
 
