@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('en');
             $table->string('nl');
             $table->string('fr');
+            $table->string('es');
             $table->timestamps();
         });
     }

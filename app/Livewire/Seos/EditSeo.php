@@ -13,13 +13,15 @@ class EditSeo extends Component
     public array $translations = [
         'nl' => '',
         'fr' => '',
-        'en' => ''
+        'en' => '',
+        'es' => '',
     ];
 
     protected $rules = [
         'translations.nl' => 'required',
         'translations.fr' => 'required',
         'translations.en' => 'required',
+        'translations.es' => 'required',
     ];
 
     public function mount(Seo $seo)
@@ -28,6 +30,7 @@ class EditSeo extends Component
         $this->translations['nl'] = $seo->nl;
         $this->translations['fr'] = $seo->fr;
         $this->translations['en'] = $seo->en;
+        $this->translations['es'] = $seo->es;
     }
 
     public function save()
@@ -37,6 +40,7 @@ class EditSeo extends Component
         $this->seo->nl = $this->translations['nl'];
         $this->seo->fr = $this->translations['fr'];
         $this->seo->en = $this->translations['en'];
+        $this->seo->es = $this->translations['es'];
         $this->seo->save();
 
         session()->flash('message', __('SEO field successfully updated.'));

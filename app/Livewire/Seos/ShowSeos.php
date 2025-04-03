@@ -23,9 +23,4 @@ class ShowSeos extends Component
     {
         return redirect()->route('seos.edit', $seo);
     }
-
-    public function confirmDelete($id)
-    {
-        // Implementeer delete functionaliteit
-    }
 }

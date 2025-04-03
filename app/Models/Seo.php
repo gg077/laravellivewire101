@@ -11,6 +11,5 @@ class Seo extends Model
     /** @use HasFactory<\Database\Factories\SeoFactory> */
     use HasFactory;
 
-    protected $fillable = [
-    ];
+    // The model has implicit fields: en, nl, fr for each language
 }
