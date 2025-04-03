@@ -10,9 +10,9 @@
         <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
                 <div class="px-4 sm:px-0">
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">{{ __('messages.Rol Bewerken') }}</h3>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">{{ __('messages.Edit role') }}</h3>
                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                        {{ __('messages.Bewerk de geselecteerde rol.') }}
+                        {{ __('messages.Edit the selected role.') }}
                     </p>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                     <div class="px-4 py-5 bg-white dark:bg-gray-800 sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md">
                         <div class="grid grid-cols-6 gap-6">
                             <div class="col-span-6 sm:col-span-4">
-                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ __('messages.Naam') }}</label>
+                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ __('messages.Name') }}</label>
                                 <input type="text"
                                        wire:model="name"
                                        id="name"
@@ -32,7 +32,7 @@
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
-                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ __('messages.Icoon') }}</label>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{{ __('messages.Icon') }}</label>
                                 <div class="relative">
                                     <button
                                         type="button"
@@ -45,7 +45,7 @@
                                             </svg>
                                             <span class="text-gray-900 dark:text-white">{{ Str::title(str_replace('-', ' ', $selectedIcon['name'])) }}</span>
                                         @else
-                                            <span class="text-gray-500">{{ __('messages.Selecteer een icoon') }}</span>
+                                            <span class="text-gray-500">{{ __('messages.Select an icon') }}</span>
                                         @endif
                                         <svg class="ml-auto h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z" clip-rule="evenodd" />
@@ -59,7 +59,7 @@
                                                     type="text"
                                                     wire:model.live="search"
                                                     class="w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-900 dark:text-white"
-                                                    placeholder="{{ __('messages.Zoek een icoon...') }}"
+                                                    placeholder="{{ __('messages.Search for an icon...') }}"
                                                 >
                                             </div>
                                             <div class="max-h-60 overflow-y-auto p-2">
@@ -104,7 +104,7 @@
 
                     <div class="flex items-center justify-end px-4 py-3 bg-gray-50 dark:bg-gray-800 text-right sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">
                         <x-ui.button type="submit">
-                            {{ __('messages.Opslaan') }}
+                            {{ __('messages.Save') }}
                         </x-ui.button>
                     </div>
                 </form>

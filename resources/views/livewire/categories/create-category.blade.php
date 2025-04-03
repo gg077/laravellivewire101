@@ -10,9 +10,9 @@
         <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="md:col-span-1">
                 <div class="px-4 sm:px-0">
-                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">{{ __('messages.Nieuwe Categorie') }}</h3>
+                    <h3 class="text-lg font-medium text-gray-900 dark:text-white">{{ __('messages.New category') }}</h3>
                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                        {{ __('messages.Voeg een nieuwe categorie toe voor posts.') }}
+                        {{ __('messages.Add a new category for posts.') }}
                     </p>
                 </div>
             </div>
@@ -36,7 +36,7 @@
 
                     <div class="flex items-center justify-end px-4 py-3 bg-gray-50 dark:bg-gray-800 text-right sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">
                         <x-ui.button type="submit">
-                            {{ __('messages.Opslaan') }}
+                            {{ __('messages.Save') }}
                         </x-ui.button>
                     </div>
                 </form>

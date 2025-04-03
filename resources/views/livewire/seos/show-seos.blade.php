@@ -6,10 +6,10 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-500 dark:text-gray-400">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Zm3.75 11.625a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                     </svg>
-                    <h1 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">{{ __('SEO') }}</h1>
+                    <h1 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">{{ __('messages.Seo') }}</h1>
                 </div>
                 <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">
-                    {{ __('Beheer de SEO content.') }}
+                    {{ __('messages.Manage seo content.') }}
                 </p>
             </div>
         </div>
@@ -22,22 +22,22 @@
                             <thead class="bg-gray-50 dark:bg-gray-700/50">
                             <tr>
                                 <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-6">
-                                    {{ __('Field Name') }}
+                                    {{ __('messages.Field Name') }}
                                 </th>
                                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white">
-                                    {{ __('English') }}
+                                    {{ __('messages.English') }}
                                 </th>
                                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white">
-                                    {{ __('Nederlands') }}
+                                    {{ __('messages.Dutch') }}
                                 </th>
                                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white">
-                                    {{ __('français') }}
+                                    {{ __('messages.French') }}
                                 </th>
                                 <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white">
                                     {{ __('español') }}
                                 </th>
                                 <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
-                                    <span class="sr-only">{{ __('Actions') }}</span>
+                                    <span class="sr-only">{{ __('messages.Actions') }}</span>
                                 </th>
                             </tr>
                             </thead>
@@ -45,7 +45,7 @@
                             @forelse($seos as $seo)
                                 <tr wire:key="{{ $seo->id }}" class="hover:bg-gray-50/50 dark:hover:bg-gray-700/50 transition duration-150">
                                     <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-6">
-                                        {{ $seo->id == 1 ? 'Description' : ($seo->id == 2 ? 'Keywords' : 'Unknown') }}
+                                        {{ $seo->id == 1 ? __('messages.Description') : ($seo->id == 2 ? __('messages.Keywords') : __('messages.Unknown')) }}
                                     </td>
                                     <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-300 truncate max-w-xs">
                                         {{ Str::limit($seo->en, 50) }}
@@ -80,7 +80,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-400">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                                             </svg>
-                                            {{ __('No SEO entries found') }}
+                                            {{ __('messages.No SEO entries found') }}
                                         </div>
                                     </td>
                                 </tr>

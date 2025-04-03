@@ -47,38 +47,6 @@ class EditPost extends Component
         ];
     }
 
-    protected $messages=[
-        'title_en.required' => 'The English title is required.',
-        'title_en.min' => 'The English title must be at least 3 characters long.',
-        'title_nl.required' => 'The Dutch title is required.',
-        'title_nl.min' => 'The Dutch title must be at least 3 characters long.',
-        'title_fr.required' => 'The French title is required.',
-        'title_fr.min' => 'The French title must be at least 3 characters long.',
-        'title_es.required' => 'The English title is required.',
-        'title_es.min' => 'The English title must be at least 3 characters long.',
-        'slug_en.required' => 'The English slug is required.',
-        'slug_en.min' => 'The English slug must be at least 3 characters.',
-        'slug_en.unique' => 'The English slug must be unique.',
-        'slug_nl.required' => 'The Dutch slug is required.',
-        'slug_nl.min' => 'The Dutch slug must be at least 3 characters.',
-        'slug_nl.unique' => 'The Dutch slug must be unique.',
-        'slug_fr.required' => 'The French slug is required.',
-        'slug_fr.min' => 'The French slug must be at least 3 characters.',
-        'slug_fr.unique' => 'The French slug must be unique.',
-        'slug_es.min' => 'The French slug must be at least 3 characters.',
-        'slug_es.unique' => 'The French slug must be unique.',
-        'content_en.required' => 'The English content is required.',
-        'content_en.min' => 'The English content must be at least 10 characters long.',
-        'content_nl.required' => 'The Dutch content is required.',
-        'content_nl.min' => 'The Dutch content must be at least 10 characters long.',
-        'content_fr.required' => 'The French content is required.',
-        'content_fr.min' => 'The French content must be at least 10 characters long.',
-        'content_es.required' => 'The French content is required.',
-        'content_es.min' => 'The French content must be at least 10 characters long.',
-        'is_published.boolean' => 'The published status must be true or false.',
-        'selectedCategories.array' => 'The selected categories must be an array.',
-    ];
-
     public function mount(Post $post) // mount om blade, vanuit database te laden
     {
         $this->currentLanguage=LaravelLocalization::getCurrentLocale();

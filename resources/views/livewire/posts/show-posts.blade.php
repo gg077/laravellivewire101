@@ -5,16 +5,16 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-500 dark:text-gray-400">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
                 </svg>
-                <h1 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">{{ __('messages.Alle Posts') }}</h1>
+                <h1 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">{{ __('messages.All posts') }}</h1>
             </div>
-            <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">{{ __('messages.Beheer alle blogposts van het systeem.') }}</p>
+            <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">{{ __('messages.Manage all blog posts of the system.') }}</p>
         </div>
         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
             <a href="{{ route('posts.create') }}" class="inline-flex items-center gap-x-2 rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 -ml-0.5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
-                {{ __('messages.Nieuw Post') }}
+                {{ __('messages.New post') }}
             </a>
         </div>
     </div>
@@ -23,11 +23,11 @@
         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
             <thead class="bg-gray-50 dark:bg-gray-700/50">
             <tr>
-                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-white">{{ __('messages.Titel') }}</th>
+                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-white">{{ __('messages.Title') }}</th>
                 <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-white">{{ __('messages.Content') }}</th>
                 <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-white">{{ __('messages.Status') }}</th>
-                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-white">{{ __('messages.Categorieën') }}</th>
-                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900 dark:text-white">{{ __('messages.Acties') }}</th>
+                <th class="px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-white">{{ __('messages.Categories') }}</th>
+                <th class="px-4 py-3 text-right text-sm font-semibold text-gray-900 dark:text-white">{{ __('messages.Actions') }}</th>
             </tr>
             </thead>
             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -42,7 +42,7 @@
 
                     <td class="px-4 py-3 text-sm">
             <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium {{ $post->is_published ? 'bg-green-100 text-green-800 dark:bg-green-800/20 dark:text-green-300' : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300' }}">
-                {{ $post->is_published ? __('messages.Gepubliceerd') : __('messages.Concept') }}
+                {{ $post->is_published ? __('messages.Published') : __('messages.Draft') }}
             </span>
                     </td>
                     <td class="px-4 py-3 text-sm">
@@ -73,7 +73,7 @@
             @empty
                 <tr>
                     <td colspan="5" class="px-4 py-6 text-center text-sm text-gray-500 dark:text-gray-300">
-                        {{ __('messages.Geen berichten gevonden.') }}
+                        {{ __('messages.No posts found.') }}
                     </td>
                 </tr>
             @endforelse

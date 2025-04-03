@@ -35,7 +35,7 @@
         @if($editing && Auth::user()->hasRole("admin"))
             <div class="flex justify-end mb-4">
                 <button wire:click="save" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
-                    {{ __('messages.Opslaan') }}
+                    {{ __('messages.Save') }}
                 </button>
                 <button wire:click="toggleEdit" class="ml-2 px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700">
                     {{ __('messages.Cancel') }}
@@ -44,12 +44,12 @@
         @endif
 
         <div class="mb-4 text-sm">
-            <span class="text-gray-500 dark:text-gray-400">{{ __('messages.Auteur') }}:</span>
+            <span class="text-gray-500 dark:text-gray-400">{{ __('messages.Author') }}:</span>
             <span class="font-semibold text-gray-900 dark:text-white">{{ $post->author->name }}</span>
         </div>
 
         <div class="mb-4 text-sm">
-            <span class="text-gray-500 dark:text-gray-400">{{ __('messages.Laatst bijgewerkt op') }}:</span>
+            <span class="text-gray-500 dark:text-gray-400">{{ __('messages.Last updated on') }}:</span>
             <span class="text-gray-900 dark:text-white">{{ $post->updated_at->format('d-m-Y H:i') }}</span>
         </div>
 
@@ -73,7 +73,7 @@
 
     <div class="mt-6">
         <a href="{{ route('posts.index') }}" class="text-indigo-600 dark:text-indigo-400 hover:underline">
-            {{ __('messages.Terug naar overzicht') }}
+            {{ __('messages.Back to overview') }}
         </a>
     </div>
 </div>
