@@ -16,7 +16,7 @@ class TranslationsImport implements ToArray
                 $value = trim($row[2]); // Vertaalde tekst (bijv. "Welkom!")
 
                 // Pad naar het juiste JSON-bestand in de root lang/ map
-                $jsonPath = base_path("lang/{$lang}.json");
+                $jsonPath = base_path("lang/{$lang}/{$lang}.json");
 
                 // Controleer of het bestand al bestaat en laad de bestaande vertalingen
                 $translations = File::exists($jsonPath)
