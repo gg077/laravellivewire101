@@ -163,5 +163,24 @@ new #[Layout('components.layouts.auth')] class extends Component {
             <flux:link :href="route('register')" wire:navigate>{{ __('messages.Sign up') }}</flux:link>
         </div>
     @endif
+    <!-- Language Switcher -->
+    <flux:dropdown class="mx-auto mt-5">
+        <flux:button icon:trailing="chevron-down" class="w-24 justify-between">
+            {{ strtoupper(LaravelLocalization::getCurrentLocale()) }}
+        </flux:button>
+        <flux:menu>
+            <flux:menu.radio.group>
+                @foreach (LaravelLocalization::getSupportedLocales() as $code => $label)
+                    <flux:menu.item
+                        href="{{ LaravelLocalization::getLocalizedURL($code, null, [], true) }}"
+                        :active="LaravelLocalization::getCurrentLocale() === $code"
+                        :class="LaravelLocalization::getCurrentLocale() === $code ? 'font-bold' : ''"
+                    >
+                        {{ $label['native'] }}
+                    </flux:menu.item>
+                @endforeach
+            </flux:menu.radio.group>
+        </flux:menu>
+    </flux:dropdown>
 </div>
 
