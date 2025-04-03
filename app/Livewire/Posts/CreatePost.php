@@ -41,25 +41,6 @@ class CreatePost extends Component
         'selectedCategories' => 'array',
     ];
 
-    protected $messages=[
-        'title_en.required' => 'The English title is required.',
-        'title_en.min' => 'The English title must be at least 3 characters long.',
-        'title_nl.required' => 'The Dutch title is required.',
-        'title_nl.min' => 'The Dutch title must be at least 3 characters long.',
-        'title_fr.required' => 'The French title is required.',
-        'title_fr.min' => 'The French title must be at least 3 characters long.',
-        'title_es.required' => 'The French title is required.',
-        'title_es.min' => 'The French title must be at least 3 characters long.',
-        'content_en.required' => 'The English content is required.',
-        'content_en.min' => 'The English content must be at least 10 characters long.',
-        'content_nl.required' => 'The Dutch content is required.',
-        'content_nl.min' => 'The Dutch content must be at least 10 characters long.',
-        'content_fr.required' => 'The French content is required.',
-        'content_fr.min' => 'The French content must be at least 10 characters long.',
-        'is_published.boolean' => 'The published status must be true or false.',
-        'selectedCategories.array' => 'The selected categories must be an array.',
-    ];
-
     public function mount()
     {
         $this->allCategories = Category::all();

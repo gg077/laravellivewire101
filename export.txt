@@ -100,13 +100,13 @@ Export knoppen toevoegen aan de view:
 <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
     <div class="flex items-center justify-between">
         <div class="flex items-center space-x-4">
-            <span class="text-sm text-gray-700">Exporteer gebruikers:</span>
+            <span class="text-sm text-gray-700">{{__('Expo')}}</span>
             <div class="flex space-x-2">
-                <button wire:click="exportCsv" 
+                <button wire:click="exportCsv"
                         class="inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                     CSV
                 </button>
-                <button wire:click="exportExcel" 
+                <button wire:click="exportExcel"
                         class="inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                     Excel
                 </button>
@@ -148,4 +148,4 @@ De volgende export opties zijn verwijderd vanwege problemen met UTF-8 encoding:
 - Export van geselecteerde gebruikers alleen
 - Meer export opties (bijvoorbeeld: alleen actieve gebruikers)
 - Aanpasbare kolommen voor export
-- Voortgangsindicator voor grote exports 
+- Voortgangsindicator voor grote exports

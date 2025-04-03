@@ -1,10 +1,17 @@
 <?php
 
 return [
+    //Languages
+    "English"=>"English",
+    "Dutch"=>"Dutch",
+    "French"=>"French",
+    "Spanish"=>"Spanish",
+
     // Navigation
+    "Multilingual CMS"=>"Multilingual CMS",
     "Dashboard" => "Dashboard",
-    "Gebruikers" => "Users",
-    "Rollen" => "Roles",
+    "Users" => "Users",
+    "Roles" => "Roles",
     "Categories" => "Categories",
     "Posts" => "Posts",
 
@@ -54,106 +61,113 @@ return [
     "A new verification link has been sent to your email address." => "A new verification link has been sent to your email address.",
 
     // Users
-    "Gebruikersoverzicht" => "User Overview",
-    "Toon verwijderde gebruikers" => "Show deleted users",
-    "Exporteer gebruikers:" => "Export users:",
-    "Nieuwe gebruiker" => "New user",
-    "gebruikers geselecteerd" => "users selected",
-    "Verwijderen" => "Delete",
-    "Herstellen" => "Restore",
-    "Permanent verwijderen" => "Permanently delete",
-    "Selectie opheffen" => "Clear selection",
-    "Selecteer" => "Select",
-    "Naam" => "Name",
-    "E-mailadres" => "Email address",
-    "Geregistreerd op" => "Registered on",
-    "Rollen" => "Roles",
-    "Acties" => "Actions",
-    "Snel bewerken" => "Quick edit",
-    "Volledig bewerken" => "Full edit",
-    "Geen gebruikers gevonden." => "No users found.",
+    "User overview" => "User Overview",
+    "Show deleted users" => "Show deleted users",
+    "Export users:" => "Export users:",
+    "New user" => "New user",
+    "users selected" => "users selected",
+    "Delete" => "Delete",
+    "Restore" => "Restore",
+    "Permanently delete" => "Permanently delete",
+    "Clear selection" => "Clear selection",
+    "Select" => "Select",
+    "Email address" => "Email address",
+    "Registered on" => "Registered on",
+    "Actions" => "Actions",
+    "Quick edit" => "Quick edit",
+    "Full edit" => "Full edit",
+    "No users found." => "No users found.",
 
     // Edit users
-    "Gebruiker Bewerken" => "Edit user",
-    "Bewerk de gegevens van de gebruiker" => "Edit the user's information",
-    "Terug naar overzicht" => "Back to overview",
-    "Volledige naam" => "Full name",
-    "Wachtwoord" => "Password",
-    "Laat leeg om niet te wijzigen" => "Leave blank to keep unchanged",
-    "Wachtwoord Bevestigen" => "Confirm password",
-    "Rol" => "Role",
-    "Annuleren" => "Cancel",
-    "Opslaan" => "Save",
+    "Edit user" => "Edit user",
+    "Edit the user's information.." => "Edit the user's information.",
+    "Back to overview" => "Back to overview",
+    "Full name" => "Full name",
+    "Leave blank to keep unchanged." => "Leave blank to keep unchanged.",
+    "Confirm password" => "Confirm password",
+    "Role" => "Role",
 
     // Create user
-    "Nieuwe Gebruiker" => "New User",
-    "Maak een nieuwe gebruiker aan voor het systeem." => "Create a new user for the system.",
-    "Bevestig Wachtwoord" => "Confirm password",
+    "Create a new user for the system." => "Create a new user for the system.",
 
     // Show roles
-    "Beheer de verschillende rollen en hun rechten in het systeem." => "Manage the various roles and their permissions in the system.",
-    "Nieuwe Rol" => "New Role",
-    "Gebruikers" => "Users",
+    "Manage the various roles and their permissions in the system." => "Manage the various roles and their permissions in the system.",
+    "New role" => "New Role",
     "Guard" => "Guard",
-    "Geen rollen gevonden" => "No roles found",
+    "No roles found." => "No roles found.",
+
+    //Create roles
+    "Create a new role for the system."=>"Create a new role for the system.",
 
     // Edit roles
-    "Rol Bewerken" => "Edit Role",
-    "Bewerk de geselecteerde rol." => "Edit the selected role.",
-    "Icoon" => "Icon",
-    "Selecteer een icoon" => "Select an icon",
-    "Zoek een icoon..." => "Search for an icon...",
+    "Edit role" => "Edit Role",
+    "Edit the selected role." => "Edit the selected role.",
+    "Icon" => "Icon",
+    "Select an icon" => "Select an icon",
+    "Search for an icon..." => "Search for an icon...",
 
     // Show category
-    "Categorieën" => "Categories",
-    "Beheer alle categorieën voor je posts." => "Manage all categories for your posts.",
-    "Nieuwe Categorie" => "New Category",
-    "Geen categorieën gevonden" => "No categories found",
+    "Manage all categories for your post." => "Manage all categories for your posts.",
+    "New category" => "New Category",
+    "No categories found." => "No categories found.",
 
     // Category names
     'category_names' => [
-        'technologie' => 'Technology',
+        'Technology' => 'Technology',
         'health' => 'Health',
         'sports' => 'Sports',
-        'nieuws' => 'News',
+        'News' => 'News',
         'lifestyle' => 'Lifestyle',
         'business' => 'Business',
-        'sport' => 'Sports',
     ],
 
     // Edit category
-    'Categorie Bewerken' => 'Edit Category',
-    'Pas de naam van deze categorie aan.' => 'Update the name of this category.',
+    'Edit category' => 'Edit Category',
+    'Update the name of this category.' => 'Update the name of this category.',
 
     // Create category
-    'Niewe Categorie' => 'New Category',
-    'Voeg een nieuwe categorie toe voor posts.' => 'Add a new category for posts.',
+    'Add a new category for posts.' => 'Add a new category for posts.',
 
     // Show posts
-    'Bewerken' => 'Edit',
-    'Alle Posts' => 'All Posts',
-    'Beheer alle blogposts van het systeem.' => 'Manage all blog posts of the system.',
-    'Nieuw Post' => 'New Post',
-    'Titel' => 'Title',
+    'Edit' => 'Edit',
+    'All posts' => 'All Posts',
+    'Manage all blog posts of the system.' => 'Manage all blog posts of the system.',
+    'New post' => 'New Post',
+    'Title' => 'Title',
     'Content' => 'Content',
     'Status' => 'Status',
-    'Gepubliceerd' => 'Published',
-    'Concept' => 'Draft',
-    'Geen berichten gevonden.' => 'No posts found.',
+    'Published' => 'Published',
+    'Draft' => 'Draft',
+    'No posts found.' => 'No posts found.',
 
     // Edit posts
-    'Post Bewerken' => 'Edit Post',
-    'Geschreven door' => 'Written by',
-    'Laatst bijgewerkt op' => 'Last updated on',
+    'Edit post' => 'Edit Post',
+    'Written by' => 'Written by',
+    'Last updated on' => 'Last updated on',
     'Slug' => 'Slug',
-    'Inhoud' => 'Content',
 
     // Create posts
-    'Nieuw Bericht Aanmaken' => 'Create New Post',
-    'Aanmaken' => 'Create',
+    'Create new post' => 'Create new post',
+    'Create' => 'Create',
+    'Please check the fields for all available languages and try again.'=>'Please check the fields for all available languages and try again.',
+
+    //Show post
+    'Author'=>'Author',
+
+    //Show seo
+    'seo'=>'seo',
+    'Manage seo content.'=>'Manage seo content.',
+    'Field Name'=>'Field Name',
+    'Description'=>'Description',
+    'Keywords'=>'Keywords',
+    'Unknown'=>'Unknown',
+
+    //edit seo
+    'Edit seo'=>'Edit seo',
+    'Update the SEO content for different languages.'=>'Update the SEO content for different languages.',
+
 
     // Confirm password
-    'Confirm password' => 'Confirm password',
     'This is a secure area of the application. Please confirm your password before continuing.' => 'This is a secure area of the application. Please confirm your password before continuing.',
     'Confirm' => 'Confirm',
 
@@ -169,8 +183,6 @@ return [
     // login.blade
     'Log in to your account' => 'Log in to your account',
     'Enter your email and password below to log in' => 'Enter your email and password below to log in',
-    'Email address' => 'Email address',
-    'Password' => 'Password',
     'Forgot your password?' => 'Forgot your password?',
     'Remember me' => 'Remember me',
     'Log in' => 'Log in',
@@ -178,33 +190,21 @@ return [
     "Don't have an account?" => "Don't have an account?",
     'Sign up' => 'Sign up',
     'Log in with Google' => 'Log in with Google',
+    'Log in with Github' => 'Log in with Github',
 
     // register.blade
     'Create an account' => 'Create an account',
     'Enter your details below to create your account' => 'Enter your details below to create your account',
-    'Name' => 'Name',
-    'Full name' => 'Full name',
-    'Email address' => 'Email address',
-    'Password' => 'Password',
-    'Confirm password' => 'Confirm password',
     'Create account' => 'Create account',
     'Already have an account?' => 'Already have an account?',
-    'Log in' => 'Log in',
 
     // reset-password.blade
     'Reset password' => 'Reset password',
     'Please enter your new password below' => 'Please enter your new password below',
-    'Email' => 'Email',
-    'Password' => 'Password',
-    'Confirm password' => 'Confirm password',
 
     // verify-email.blade
     'Please verify your email address by clicking on the link we just emailed to you.' => 'Please verify your email address by clicking on the link we just emailed to you.',
     'A new verification link has been sent to the email address you provided during registration.' => 'A new verification link has been sent to the email address you provided during registration.',
     'Resend verification email' => 'Resend verification email',
     'Log out' => 'Log out',
-
-
-
-
 ];

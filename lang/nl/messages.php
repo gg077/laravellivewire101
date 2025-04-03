@@ -1,10 +1,17 @@
 <?php
 
 return [
+    // Languages
+    "English" => "Engels",
+    "Dutch" => "Nederlands",
+    "French" => "Frans",
+    "Spanish" => "Spaans",
+
     // Navigation
+    "Multilingual CMS" => "Meertalige CMS",
     "Dashboard" => "Dashboard",
-    "Gebruikers" => "Gebruikers",
-    "Rollen" => "Rollen",
+    "Users" => "Gebruikers",
+    "Roles" => "Rollen",
     "Categories" => "Categorieën",
     "Posts" => "Berichten",
 
@@ -17,12 +24,12 @@ return [
     "Log Out" => "Uitloggen",
     "Profile" => "Profiel",
     "Password" => "Wachtwoord",
-    "Appearance" => "Weergave",
+    "Appearance" => "Uiterlijk",
     "Languages" => "Talen",
 
     // Settings page subtitles
-    "Manage your profile and account settings" => "Beheer uw profiel- en accountinstellingen",
-    "Update the appearance settings for your account" => "Update de weergave-instellingen voor uw account",
+    "Manage your profile and account settings" => "Beheer je profiel- en accountinstellingen",
+    "Update the appearance settings for your account" => "Werk de uiterlijkinstellingen voor je account bij",
 
     // Appearance options
     "Light" => "Licht",
@@ -31,176 +38,172 @@ return [
 
     // Delete account
     "Delete account" => "Account verwijderen",
-    "Delete your account and all of its resources" => "Verwijder uw account en alle bijbehorende gegevens",
-    "Are you sure you want to delete your account?" => "Weet u zeker dat u uw account wilt verwijderen?",
+    "Delete your account and all of its resources" => "Verwijder je account en al zijn bronnen",
+    "Are you sure you want to delete your account?" => "Weet je zeker dat je je account wilt verwijderen?",
     "Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account." =>
-        "Zodra uw account is verwijderd, worden alle gegevens permanent gewist. Voer uw wachtwoord in om te bevestigen dat u uw account permanent wilt verwijderen.",
+        "Zodra je account is verwijderd, worden alle bronnen en gegevens permanent verwijderd. Voer je wachtwoord in om te bevestigen dat je je account permanent wilt verwijderen.",
     "Cancel" => "Annuleren",
 
     // Update password
     "Update password" => "Wachtwoord bijwerken",
-    "Ensure your account is using a long, random password to stay secure" => "Zorg voor een lang, willekeurig wachtwoord voor uw accountbeveiliging",
+    "Ensure your account is using a long, random password to stay secure" => "Zorg ervoor dat je account een lang, willekeurig wachtwoord gebruikt voor veiligheid",
     "Current password" => "Huidig wachtwoord",
     "New password" => "Nieuw wachtwoord",
     "Confirm Password" => "Bevestig wachtwoord",
     "Save" => "Opslaan",
     "Saved." => "Opgeslagen.",
 
-    "Update your name and email address" => "Update uw naam en e-mailadres",
+    "Update your name and email address" => "Werk je naam en e-mailadres bij",
     "Name" => "Naam",
     "Email" => "E-mail",
-    "Your email address is unverified." => "Uw e-mailadres is niet geverifieerd.",
-    "Click here to re-send the verification email." => "Klik hier om de verificatie-e-mail opnieuw te versturen.",
-    "A new verification link has been sent to your email address." => "Een nieuwe verificatielink is naar uw e-mailadres gestuurd.",
+    "Your email address is unverified." => "Je e-mailadres is niet geverifieerd.",
+    "Click here to re-send the verification email." => "Klik hier om de verificatiemail opnieuw te sturen.",
+    "A new verification link has been sent to your email address." => "Er is een nieuwe verificatielink naar je e-mailadres gestuurd.",
 
     // Users
-    "Gebruikersoverzicht" => "Gebruikersoverzicht",
-    "Toon verwijderde gebruikers" => "Toon verwijderde gebruikers",
-    "Exporteer gebruikers:" => "Exporteer gebruikers:",
-    "Nieuwe gebruiker" => "Nieuwe gebruiker",
-    "gebruikers geselecteerd" => "gebruikers geselecteerd",
-    "Verwijderen" => "Verwijderen",
-    "Herstellen" => "Herstellen",
-    "Permanent verwijderen" => "Permanent verwijderen",
-    "Selectie opheffen" => "Selectie opheffen",
-    "Selecteer" => "Selecteer",
-    "Naam" => "Naam",
-    "E-mailadres" => "E-mailadres",
-    "Geregistreerd op" => "Geregistreerd op",
-    "Rollen" => "Rollen",
-    "Acties" => "Acties",
-    "Snel bewerken" => "Snel bewerken",
-    "Volledig bewerken" => "Volledig bewerken",
-    "Geen gebruikers gevonden." => "Geen gebruikers gevonden.",
+    "User overview" => "Overzicht gebruikers",
+    "Show deleted users" => "Verwijderde gebruikers weergeven",
+    "Export users:" => "Exporteer gebruikers:",
+    "New user" => "Nieuwe gebruiker",
+    "users selected" => "gebruikers geselecteerd",
+    "Delete" => "Verwijderen",
+    "Restore" => "Herstellen",
+    "Permanently delete" => "Permanent verwijderen",
+    "Clear selection" => "Selectie wissen",
+    "Select" => "Selecteren",
+    "Email address" => "E-mailadres",
+    "Registered on" => "Geregistreerd op",
+    "Actions" => "Acties",
+    "Quick edit" => "Snelle bewerking",
+    "Full edit" => "Volledige bewerking",
+    "No users found." => "Geen gebruikers gevonden.",
 
     // Edit users
-    "Gebruiker Bewerken" => "Gebruiker bewerken",
-    "Bewerk de gegevens van de gebruiker" => "Bewerk de gegevens van de gebruiker",
-    "Terug naar overzicht" => "Terug naar overzicht",
-    "Volledige naam" => "Volledige naam",
-    "Wachtwoord" => "Wachtwoord",
-    "Laat leeg om niet te wijzigen" => "Laat leeg om niet te wijzigen",
-    "Wachtwoord Bevestigen" => "Wachtwoord bevestigen",
-    "Rol" => "Rol",
-    "Annuleren" => "Annuleren",
-    "Opslaan" => "Opslaan",
+    "Edit user" => "Bewerk gebruiker",
+    "Edit the user's information.." => "Bewerk de informatie van de gebruiker.",
+    "Back to overview" => "Terug naar overzicht",
+    "Full name" => "Volledige naam",
+    "Leave blank to keep unchanged." => "Laat leeg om ongewijzigd te houden.",
+    "Confirm password" => "Bevestig wachtwoord",
+    "Role" => "Rol",
 
     // Create user
-    "Nieuwe Gebruiker" => "Nieuwe Gebruiker",
-    "Maak een nieuwe gebruiker aan voor het systeem." => "Maak een nieuwe gebruiker aan voor het systeem.",
-    "Bevestig Wachtwoord" => "Bevestig wachtwoord",
+    "Create a new user for the system." => "Maak een nieuwe gebruiker voor het systeem.",
 
     // Show roles
-    "Beheer de verschillende rollen en hun rechten in het systeem." => "Beheer de verschillende rollen en hun rechten in het systeem.",
-    "Nieuwe Rol" => "Nieuwe Rol",
-    "Gebruikers" => "Gebruikers",
-    "Guard" => "Guard",
-    "Geen rollen gevonden" => "Geen rollen gevonden",
+    "Manage the various roles and their permissions in the system." => "Beheer de verschillende rollen en hun permissies in het systeem.",
+    "New role" => "Nieuwe rol",
+    "Guard" => "Bewaker",
+    "No roles found." => "Geen rollen gevonden.",
+
+    // Create roles
+    "Create a new role for the system." => "Maak een nieuwe rol voor het systeem.",
 
     // Edit roles
-    "Rol Bewerken" => "Rol bewerken",
-    "Bewerk de geselecteerde rol." => "Bewerk de geselecteerde rol.",
-    "Icoon" => "Icoon",
-    "Selecteer een icoon" => "Selecteer een icoon",
-    "Zoek een icoon..." => "Zoek een icoon...",
+    "Edit role" => "Bewerk rol",
+    "Edit the selected role." => "Bewerk de geselecteerde rol.",
+    "Icon" => "Pictogram",
+    "Select an icon" => "Selecteer een pictogram",
+    "Search for an icon..." => "Zoek een pictogram...",
 
     // Show category
-    "Categorieën" => "Categorieën",
-    "Beheer alle categorieën voor je posts." => "Beheer alle categorieën voor je berichten.",
-    "Nieuwe Categorie" => "Nieuwe Categorie",
-    "Geen categorieën gevonden" => "Geen categorieën gevonden",
+    "Manage all categories for your post." => "Beheer alle categorieën voor je berichten.",
+    "New category" => "Nieuwe categorie",
+    "No categories found." => "Geen categorieën gevonden.",
 
     // Category names
     'category_names' => [
-        'technologie' => 'Technologie',
+        'Technology' => 'Technologie',
         'health' => 'Gezondheid',
         'sports' => 'Sport',
-        'nieuws' => 'Nieuws',
+        'News' => 'Nieuws',
         'lifestyle' => 'Lifestyle',
         'business' => 'Zakelijk',
-        'sport' => 'Sport',
     ],
 
     // Edit category
-    'Categorie Bewerken' => 'Categorie bewerken',
-    'Pas de naam van deze categorie aan.' => 'Pas de naam van deze categorie aan.',
+    'Edit category' => 'Bewerk categorie',
+    'Update the name of this category.' => 'Werk de naam van deze categorie bij.',
 
     // Create category
-    'Niewe Categorie' => 'Nieuwe Categorie',
-    'Voeg een nieuwe categorie toe voor posts.' => 'Voeg een nieuwe categorie toe voor berichten.',
+    'Add a new category for posts.' => 'Voeg een nieuwe categorie toe voor berichten.',
 
     // Show posts
-    'Bewerken' => 'bewerk',
-    'Alle Posts' => 'Alle Berichten',
-    'Beheer alle blogposts van het systeem.' => 'Beheer alle blogberichten van het systeem.',
-    'Nieuw Post' => 'Nieuw Bericht',
-    'Titel' => 'Titel',
+    'Edit' => 'Bewerken',
+    'All posts' => 'Alle berichten',
+    'Manage all blog posts of the system.' => 'Beheer alle blogberichten van het systeem.',
+    'New post' => 'Nieuw bericht',
+    'Title' => 'Titel',
     'Content' => 'Inhoud',
     'Status' => 'Status',
-    'Gepubliceerd' => 'Gepubliceerd',
-    'Concept' => 'Concept',
-    'Geen berichten gevonden.' => 'Geen berichten gevonden.',
+    'Published' => 'Geplaatst',
+    'Draft' => 'Concept',
+    'No posts found.' => 'Geen berichten gevonden.',
 
     // Edit posts
-    'Post Bewerken' => 'Bericht bewerken',
-    'Geschreven door' => 'Geschreven door',
-    'Laatst bijgewerkt op' => 'Laatst bijgewerkt op',
+    'Edit post' => 'Bewerk bericht',
+    'Written by' => 'Geschreven door',
+    'Last updated on' => 'Laatst bijgewerkt op',
     'Slug' => 'Slug',
-    'Inhoud' => 'Inhoud',
 
     // Create posts
-    'Nieuw Bericht Aanmaken' => 'Nieuw Bericht Aanmaken',
-    'Aanmaken' => 'Aanmaken',
+    'Create new post' => 'Maak nieuw bericht',
+    'Create' => 'Aanmaken',
+    'Please check the fields for all available languages and try again.' => 'Controleer de velden voor alle beschikbare talen en probeer het opnieuw.',
+
+    // Show post
+    'Author' => 'Auteur',
+
+    // Show seo
+    'seo' => 'seo',
+    'Manage seo content.' => 'Beheer seo-inhoud.',
+    'Field Name' => 'Veldnaam',
+    'Description' => 'Beschrijving',
+    'Keywords' => 'Trefwoorden',
+    'Unknown' => 'Onbekend',
+
+    // Edit seo
+    'Edit seo' => 'Bewerk seo',
+    'Update the SEO content for different languages.' => 'Werk de SEO-inhoud bij voor verschillende talen.',
 
     // Confirm password
-    'Confirm password' => 'Bevestig wachtwoord',
-    'This is a secure area of the application. Please confirm your password before continuing.' => 'Dit is een beveiligd gedeelte van de applicatie. Bevestig uw wachtwoord om verder te gaan.',
+    'This is a secure area of the application. Please confirm your password before continuing.' => 'Dit is een beveiligd gedeelte van de applicatie. Bevestig je wachtwoord voordat je verdergaat.',
     'Confirm' => 'Bevestigen',
 
     // Password reset
     'Forgot password' => 'Wachtwoord vergeten',
-    'Enter your email to receive a password reset link' => 'Voer uw e-mail in om een wachtwoord reset link te ontvangen',
+    'Enter your email to receive a password reset link' => 'Voer je e-mail in om een wachtwoordherstel link te ontvangen',
     'Email Address' => 'E-mailadres',
-    'Email password reset link' => 'Wachtwoord reset link versturen',
-    'Or, return to' => 'Of ga terug naar',
+    'Email password reset link' => 'Stuur wachtwoordherstel link',
+    'Or, return to' => 'Of, keer terug naar',
     'log in' => 'inloggen',
-    'A reset link will be sent if the account exists.' => 'Een reset link wordt verstuurd als het account bestaat.',
+    'A reset link will be sent if the account exists.' => 'Een resetlink wordt verzonden als het account bestaat.',
 
     // login.blade
-    'Log in to your account' => 'Log in op uw account',
-    'Enter your email and password below to log in' => 'Voer uw e-mail en wachtwoord in om in te loggen',
-    'Email address' => 'E-mailadres',
-    'Password' => 'Wachtwoord',
+    'Log in to your account' => 'Log in op je account',
+    'Enter your email and password below to log in' => 'Voer je e-mail en wachtwoord hieronder in om in te loggen',
     'Forgot your password?' => 'Wachtwoord vergeten?',
     'Remember me' => 'Onthoud mij',
     'Log in' => 'Inloggen',
     'or' => 'of',
-    "Don't have an account?" => "Nog geen account?",
+    "Don't have an account?" => "Heb je geen account?",
     'Sign up' => 'Aanmelden',
-    'Log in with Google' => 'Inloggen met Google',
+    'Log in with Google' => 'Log in met Google',
+    'Log in with Github' => 'Log in met Github',
 
     // register.blade
-    'Create an account' => 'Account aanmaken',
-    'Enter your details below to create your account' => 'Voer uw gegevens in om een account aan te maken',
-    'Name' => 'Naam',
-    'Full name' => 'Volledige naam',
-    'Email address' => 'E-mailadres',
-    'Password' => 'Wachtwoord',
-    'Confirm password' => 'Bevestig wachtwoord',
+    'Create an account' => 'Maak een account aan',
+    'Enter your details below to create your account' => 'Vul je gegevens hieronder in om je account te maken',
     'Create account' => 'Account aanmaken',
-    'Already have an account?' => 'Heeft u al een account?',
-    'Log in' => 'Inloggen',
+    'Already have an account?' => 'Heb je al een account?',
 
     // reset-password.blade
     'Reset password' => 'Wachtwoord resetten',
-    'Please enter your new password below' => 'Voer hieronder uw nieuwe wachtwoord in',
-    'Email' => 'E-mail',
-    'Password' => 'Wachtwoord',
-    'Confirm password' => 'Bevestig wachtwoord',
+    'Please enter your new password below' => 'Voer hieronder je nieuwe wachtwoord in',
 
     // verify-email.blade
-    'Please verify your email address by clicking on the link we just emailed to you.' => 'Verifieer uw e-mailadres door op de link te klikken die we u net hebben gestuurd.',
-    'A new verification link has been sent to the email address you provided during registration.' => 'Een nieuwe verificatielink is verstuurd naar het e-mailadres dat u heeft opgegeven tijdens registratie.',
-    'Resend verification email' => 'Verificatie-e-mail opnieuw versturen',
+    'Please verify your email address by clicking on the link we just emailed to you.' => 'Verifieer je e-mailadres door op de link te klikken die we je net hebben gestuurd.',
+    'A new verification link has been sent to the email address you provided during registration.' => 'Een nieuwe verificatielink is verzonden naar het e-mailadres dat je tijdens de registratie hebt opgegeven.',
+    'Resend verification email' => 'Verstuur verificatiemail opnieuw',
     'Log out' => 'Uitloggen',
 ];

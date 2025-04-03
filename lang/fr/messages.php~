@@ -1,14 +1,14 @@
 <?php
 
 return [
-    // Languages
-    "English" => "Anglais",
-    "Dutch" => "Néerlandais",
-    "French" => "Français",
-    "Spanish" => "Espagnol",
+    //Languages
+    'English' => 'anglais',
+    'Dutch' => 'néerlandais',
+    'French' => 'français',
+    'Spanish' => 'espagnol',
 
     // Navigation
-    "Multilingual CMS" => "CMS Multilingue",
+    "Multilingual CMS"=>"CMS multilingue",
     "Dashboard" => "Tableau de bord",
     "Users" => "Utilisateurs",
     "Roles" => "Rôles",
@@ -21,15 +21,15 @@ return [
 
     // Settings and profile
     "Settings" => "Paramètres",
-    "Log Out" => "Se déconnecter",
+    "Log Out" => "Déconnexion",
     "Profile" => "Profil",
     "Password" => "Mot de passe",
     "Appearance" => "Apparence",
     "Languages" => "Langues",
 
     // Settings page subtitles
-    "Manage your profile and account settings" => "Gérer votre profil et les paramètres du compte",
-    "Update the appearance settings for your account" => "Mettre à jour les paramètres d'apparence de votre compte",
+    "Manage your profile and account settings" => "Gérez votre profil et les paramètres de votre compte",
+    "Update the appearance settings for your account" => "Mettez à jour les paramètres d'apparence de votre compte",
 
     // Appearance options
     "Light" => "Clair",
@@ -38,10 +38,10 @@ return [
 
     // Delete account
     "Delete account" => "Supprimer le compte",
-    "Delete your account and all of its resources" => "Supprimer votre compte et toutes ses ressources",
-    "Are you sure you want to delete your account?" => "Êtes-vous sûr de vouloir supprimer votre compte ?",
+    "Delete your account and all of its resources" => "Supprimez votre compte et toutes ses ressources",
+    "Are you sure you want to delete your account?" => "Êtes-vous sûr de vouloir supprimer votre compte?",
     "Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account." =>
-        "Une fois votre compte supprimé, toutes ses ressources et données seront définitivement supprimées. Veuillez entrer votre mot de passe pour confirmer que vous souhaitez supprimer définitivement votre compte.",
+        "Une fois votre compte supprimé, toutes ses ressources et données seront définitivement effacées. Veuillez entrer votre mot de passe pour confirmer que vous souhaitez supprimer définitivement votre compte.",
     "Cancel" => "Annuler",
 
     // Update password
@@ -53,11 +53,11 @@ return [
     "Save" => "Enregistrer",
     "Saved." => "Enregistré.",
 
-    "Update your name and email address" => "Mettre à jour votre nom et votre adresse e-mail",
+    "Update your name and email address" => "Mettez à jour votre nom et votre adresse e-mail",
     "Name" => "Nom",
     "Email" => "E-mail",
     "Your email address is unverified." => "Votre adresse e-mail n'est pas vérifiée.",
-    "Click here to re-send the verification email." => "Cliquez ici pour renvoyer l'email de vérification.",
+    "Click here to re-send the verification email." => "Cliquez ici pour renvoyer l'e-mail de vérification.",
     "A new verification link has been sent to your email address." => "Un nouveau lien de vérification a été envoyé à votre adresse e-mail.",
 
     // Users
@@ -70,9 +70,11 @@ return [
     "Restore" => "Restaurer",
     "Permanently delete" => "Supprimer définitivement",
     "Clear selection" => "Effacer la sélection",
-    "Select" => "Sélectionner",
+    "Selecteer" => "Sélectionner",
+    "Name" => "Nom",
     "Email address" => "Adresse e-mail",
     "Registered on" => "Inscrit le",
+    "Roles" => "Rôles",
     "Actions" => "Actions",
     "Quick edit" => "Édition rapide",
     "Full edit" => "Édition complète",
@@ -80,35 +82,42 @@ return [
 
     // Edit users
     "Edit user" => "Modifier l'utilisateur",
-    "Edit the user's information.." => "Modifier les informations de l'utilisateur.",
+    "Edit the user's information." => "Modifier les informations de l'utilisateur",
     "Back to overview" => "Retour à l'aperçu",
     "Full name" => "Nom complet",
-    "Leave blank to keep unchanged." => "Laissez vide pour garder inchangé.",
+    "Password" => "Mot de passe",
+    "Leave blank to keep unchanged." => "Laisser vide pour ne pas modifier",
     "Confirm password" => "Confirmer le mot de passe",
     "Role" => "Rôle",
+    "Cancel" => "Annuler",
+    "Save" => "Enregistrer",
 
     // Create user
-    "Create a new user for the system." => "Créer un nouvel utilisateur pour le système.",
+    "New user" => "Nouvel Utilisateur",
+    "Create a new user for the system." => "Créez un nouvel utilisateur pour le système.",
+    "Confirm password" => "Confirmer le mot de passe",
 
     // Show roles
-    "Manage the various roles and their permissions in the system." => "Gérer les différents rôles et leurs permissions dans le système.",
-    "New role" => "Nouveau rôle",
-    "Guard" => "Gardien",
+    "Manage the various roles and their permissions in the system." => "Gérez les différents rôles et leurs permissions dans le système.",
+    "New role" => "Nouveau Rôle",
+    "Users" => "Utilisateurs",
+    "Guard" => "Garde",
     "No roles found." => "Aucun rôle trouvé.",
 
-    // Create roles
-    "Create a new role for the system." => "Créer un nouveau rôle pour le système.",
-
     // Edit roles
-    "Edit role" => "Modifier le rôle",
+    "Edit role" => "Modifier le Rôle",
     "Edit the selected role." => "Modifier le rôle sélectionné.",
     "Icon" => "Icône",
     "Select an icon" => "Sélectionner une icône",
-    "Search for an icon..." => "Chercher une icône...",
+    "Search for an icon..." => "Rechercher une icône...",
+
+    //Create roles
+    "Create a new role for the system."=>"Créez un nouveau rôle pour le système.",
 
     // Show category
-    "Manage all categories for your post." => "Gérer toutes les catégories pour vos publications.",
-    "New category" => "Nouvelle catégorie",
+    "Categories" => "Catégories",
+    "Manage all categories for your post." => "Gérez toutes les catégories pour vos publications.",
+    "New category" => "Nouvelle Catégorie",
     "No categories found." => "Aucune catégorie trouvée.",
 
     // Category names
@@ -117,22 +126,24 @@ return [
         'health' => 'Santé',
         'sports' => 'Sports',
         'News' => 'Actualités',
-        'lifestyle' => 'Mode de vie',
+        'lifestyle' => 'Style de vie',
         'business' => 'Affaires',
+        'sport' => 'Sports',
     ],
 
     // Edit category
-    'Edit category' => 'Modifier la catégorie',
-    'Update the name of this category.' => 'Mettre à jour le nom de cette catégorie.',
+    'Edit category' => 'Modifier Catégorie',
+    'Update the name of this category.' => 'Modifiez le nom de cette catégorie.',
 
     // Create category
-    'Add a new category for posts.' => 'Ajouter une nouvelle catégorie pour les publications.',
+    'New category' => 'Nouvelle Catégorie',
+    'Add a new category for posts.' => 'Ajoutez une nouvelle catégorie pour les publications.',
 
     // Show posts
     'Edit' => 'Modifier',
-    'All posts' => 'Toutes les publications',
-    'Manage all blog posts of the system.' => 'Gérer toutes les publications du blog du système.',
-    'New post' => 'Nouvelle publication',
+    'All posts' => 'Toutes les Publications',
+    'Manage all blog posts of the system.' => 'Gérez toutes les publications du blog du système.',
+    'New post' => 'Nouvelle Publication',
     'Title' => 'Titre',
     'Content' => 'Contenu',
     'Status' => 'Statut',
@@ -141,18 +152,19 @@ return [
     'No posts found.' => 'Aucune publication trouvée.',
 
     // Edit posts
-    'Edit post' => 'Modifier la publication',
+    'Edit post' => 'Modifier Publication',
     'Written by' => 'Écrit par',
     'Last updated on' => 'Dernière mise à jour le',
     'Slug' => 'Slug',
+    'Content' => 'Contenu',
 
     // Create posts
     'Create new post' => 'Créer une nouvelle publication',
     'Create' => 'Créer',
-    'Please check the fields for all available languages and try again.' => 'Veuillez vérifier les champs pour toutes les langues disponibles et réessayer.',
+    'Please check the fields for all available languages and try again.'=>'Veuillez vérifier les champs pour toutes les langues disponibles et réessayez.',
 
-    // Show post
-    'Author' => 'Auteur',
+    //Show post
+    'Author'=>'Auteur',
 
     // Show seo
     'seo' => 'seo',
@@ -164,46 +176,58 @@ return [
 
     // Edit seo
     'Edit seo' => 'Modifier le seo',
-    'Update the SEO content for different languages.' => 'Mettre à jour le contenu SEO pour différentes langues.',
+    'Update the SEO content for different languages.' => 'Mettez à jour le contenu SEO pour différentes langues.',
 
     // Confirm password
+    'Confirm password' => 'Confirmer le mot de passe',
     'This is a secure area of the application. Please confirm your password before continuing.' => 'Ceci est une zone sécurisée de l\'application. Veuillez confirmer votre mot de passe avant de continuer.',
     'Confirm' => 'Confirmer',
 
     // Password reset
     'Forgot password' => 'Mot de passe oublié',
-    'Enter your email to receive a password reset link' => 'Entrez votre e-mail pour recevoir un lien de réinitialisation de mot de passe',
+    'Enter your email to receive a password reset link' => 'Entrez votre e-mail pour recevoir un lien de réinitialisation',
     'Email Address' => 'Adresse e-mail',
-    'Email password reset link' => 'Envoyer le lien de réinitialisation du mot de passe',
+    'Email password reset link' => 'Envoyer le lien de réinitialisation',
     'Or, return to' => 'Ou, retour à',
-    'log in' => 'se connecter',
+    'log in' => 'connexion',
     'A reset link will be sent if the account exists.' => 'Un lien de réinitialisation sera envoyé si le compte existe.',
 
     // login.blade
     'Log in to your account' => 'Connectez-vous à votre compte',
-    'Enter your email and password below to log in' => 'Entrez votre e-mail et votre mot de passe ci-dessous pour vous connecter',
-    'Forgot your password?' => 'Mot de passe oublié ?',
+    'Enter your email and password below to log in' => 'Entrez votre e-mail et mot de passe pour vous connecter',
+    'Email address' => 'Adresse e-mail',
+    'Password' => 'Mot de passe',
+    'Forgot your password?' => 'Mot de passe oublié?',
     'Remember me' => 'Se souvenir de moi',
-    'Log in' => 'Se connecter',
+    'Log in' => 'Connexion',
     'or' => 'ou',
-    "Don't have an account?" => "Vous n'avez pas de compte ?",
+    "Don't have an account?" => "Vous n'avez pas de compte?",
     'Sign up' => 'S\'inscrire',
     'Log in with Google' => 'Se connecter avec Google',
     'Log in with Github' => 'Se connecter avec Github',
 
     // register.blade
     'Create an account' => 'Créer un compte',
-    'Enter your details below to create your account' => 'Entrez vos informations ci-dessous pour créer votre compte',
+    'Enter your details below to create your account' => 'Entrez vos détails ci-dessous pour créer votre compte',
+    'Name' => 'Nom',
+    'Full name' => 'Nom complet',
+    'Email address' => 'Adresse e-mail',
+    'Password' => 'Mot de passe',
+    'Confirm password' => 'Confirmer le mot de passe',
     'Create account' => 'Créer un compte',
-    'Already have an account?' => 'Vous avez déjà un compte ?',
+    'Already have an account?' => 'Vous avez déjà un compte?',
+    'Log in' => 'Connexion',
 
     // reset-password.blade
     'Reset password' => 'Réinitialiser le mot de passe',
     'Please enter your new password below' => 'Veuillez entrer votre nouveau mot de passe ci-dessous',
+    'Email' => 'E-mail',
+    'Password' => 'Mot de passe',
+    'Confirm password' => 'Confirmer le mot de passe',
 
     // verify-email.blade
     'Please verify your email address by clicking on the link we just emailed to you.' => 'Veuillez vérifier votre adresse e-mail en cliquant sur le lien que nous venons de vous envoyer.',
     'A new verification link has been sent to the email address you provided during registration.' => 'Un nouveau lien de vérification a été envoyé à l\'adresse e-mail que vous avez fournie lors de l\'inscription.',
-    'Resend verification email' => 'Renvoyer l\'email de vérification',
-    'Log out' => 'Se déconnecter',
+    'Resend verification email' => 'Renvoyer l\'e-mail de vérification',
+    'Log out' => 'Déconnexion',
 ];

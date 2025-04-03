@@ -14,11 +14,11 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9m3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                     </svg>
                     <h3 class="text-lg font-medium text-gray-900 dark:text-white">
-                        {{ __('Edit SEO') }} - {{ $seo->id == 1 ? 'Description' : ($seo->id == 2 ? 'Keywords' : 'Unknown') }}
+                        {{ __('messages.Edit seo') }} - {{ $seo->id == 1 ? __('messages.Description') : ($seo->id == 2 ? __('messages.Keywords') : __('messages.Unknown')) }}
                     </h3>
                 </div>
                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                    {{ __('Update the SEO content for different languages.') }}
+                    {{ __('messages.Update the SEO content for different languages.') }}
                 </p>
             </div>
 
@@ -27,7 +27,7 @@
                 <div class="bg-white dark:bg-gray-800 shadow sm:rounded-md overflow-hidden">
                     <div class="px-4 py-5 sm:p-6">
                         <label for="en" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                            {{ __('English') }}
+                            {{ __('messages.English') }}
                         </label>
                         <textarea
                             wire:model="translations.en"
@@ -43,7 +43,7 @@
                 <div class="bg-white dark:bg-gray-800 shadow sm:rounded-md overflow-hidden">
                     <div class="px-4 py-5 sm:p-6">
                         <label for="nl" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                            {{ __('Dutch') }}
+                            {{ __('messages.Dutch') }}
                         </label>
                         <textarea
                             wire:model="translations.nl"
@@ -59,7 +59,7 @@
                 <div class="bg-white dark:bg-gray-800 shadow sm:rounded-md overflow-hidden">
                     <div class="px-4 py-5 sm:p-6">
                         <label for="fr" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                            {{ __('French') }}
+                            {{ __('messages.French') }}
                         </label>
                         <textarea
                             wire:model="translations.fr"
@@ -73,10 +73,10 @@
 
                 <div class="flex items-center justify-end px-4 py-3 bg-gray-50 dark:bg-gray-800 text-right sm:px-6 shadow sm:rounded-bl-md sm:rounded-br-md">
                     <a href="{{ route('seos.index') }}" class="mr-3 inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        {{ __('Cancel') }}
+                        {{ __('messages.Cancel') }}
                     </a>
                     <x-ui.button type="submit">
-                        {{ __('Save') }}
+                        {{ __('messages.Save') }}
                     </x-ui.button>
                 </div>
             </form>
