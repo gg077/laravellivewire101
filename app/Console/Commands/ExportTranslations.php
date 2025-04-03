@@ -7,45 +7,48 @@ use Illuminate\Support\Facades\File;
 
 class ExportTranslations extends Command
 {
-    // Define the Artisan command signature and description
     protected $signature = 'translations:export';
     protected $description = 'Export PHP translations to JSON files in the root lang/ directory';
 
     public function handle()
     {
-        // List of languages to export translations for
-        $languages = ['nl', 'fr', 'en']; // Add more languages if needed
+        $langPath = base_path('lang');
 
-        foreach ($languages as $lang) {
-            // Define the path where PHP translation files are stored (lang/{lang}/)
-            $path = base_path("lang/{$lang}");
+        // Check if the lang directory exists
+        if (!File::exists($langPath)) {
+            $this->error("The lang directory does not exist in the project root.");
+            return;
+        }
+
+        // Get all language directories in the lang folder
+        $directories = array_filter(File::directories($langPath), function ($dir) {
+            return is_dir($dir);
+        });
+
+        foreach ($directories as $directory) {
+            $lang = basename($directory);
             $translations = [];
 
-            // Check if the language directory exists
-            if (File::exists($path)) {
-                // Loop through all PHP translation files in the directory
-                foreach (File::allFiles($path) as $file) {
-                    $filename = pathinfo($file, PATHINFO_FILENAME);
-
-                    // Load translation data from the PHP file and store it in an array
-                    $translations[$filename] = require $file;
+            // Loop through all PHP translation files in the language directory
+            foreach (File::allFiles($directory) as $file) {
+                // Skip non-PHP files
+                if ($file->getExtension() !== 'php') {
+                    continue;
                 }
-            }
 
-            // Ensure the root lang/ directory exists, create it if necessary
-            $langDir = base_path("lang");
-            if (!File::exists($langDir)) {
-                File::makeDirectory($langDir, 0755, true);
+                $filename = $file->getFilenameWithoutExtension();
+                $translations[$filename] = require $file->getPathname();
             }
 
             // Define the JSON file path for the exported translations
-            $jsonPath = base_path("lang/{$lang}.json");
+            $jsonPath = "{$langPath}/{$lang}/{$lang}.json";
 
-            // Write the translations to the JSON file in a readable format
+            // Write the translations to the JSON file
             File::put($jsonPath, json_encode($translations, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
-            // Output a success message in the console
             $this->info("Exported translations to {$jsonPath}");
         }
+
+        $this->info("Translation export completed!");
     }
 }
