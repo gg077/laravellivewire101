@@ -1,12 +1,5 @@
-# Meertalig CMS met route-localization
-### Technologieën
 
-- Laravel (Backend PHP framework)
-- Livewire (Voor interactieve componenten zonder JavaScript)
-- Laravel Localization (via mcamara/laravel-localization package)
-- 
-
-## 2. Meertalige Livewire CMS Implementatie
+## Meertalige Livewire CMS Implementatie
 
 Dit document legt uit hoe we een meertalig CMS hebben geïmplementeerd met Laravel Livewire, waarmee administrators per taal (Nederlands, Engels, Frans) de titel en inhoud kunnen aanpassen.
 
