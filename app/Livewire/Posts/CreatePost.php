@@ -62,6 +62,7 @@ class CreatePost extends Component
         }
     }
 
+
     public function generateContent()
     {
         try {
@@ -75,31 +76,32 @@ class CreatePost extends Component
                 return;
             }
 
-            // Constructie van het AI-promptsjabloon met dynamische titel
+            // AI-prompt sjabloon
             $prompt = <<<EOT
-            Je bent een meertalige blogschrijver. Genereer voor de volgende titel een korte blogbeschrijving en vertaal de titel en beschrijving naar Engels, Nederlands, Frans en Spaans.
+        Je bent een meertalige blogschrijver. Genereer voor de volgende titel een korte blogbeschrijving en vertaal de titel en beschrijving naar Engels, Nederlands, Frans en Spaans.
 
-            Titel: "$originalTitle"
+        Titel: "$originalTitle"
 
-            Geef het resultaat als geldig JSON-object in dit formaat:
-            {
-              "en": {"title": "...", "description": "..."},
-              "nl": {"title": "...", "description": "..."},
-              "fr": {"title": "...", "description": "..."},
-              "es": {"title": "...", "description": "..."}
-            }
-            Alleen het JSON object. Geen uitleg of markdown.
-            EOT;
+        Geef het resultaat als geldig JSON-object in dit formaat:
+        {
+          "en": {"title": "...", "description": "..."},
+          "nl": {"title": "...", "description": "..."},
+          "fr": {"title": "...", "description": "..."},
+          "es": {"title": "...", "description": "..."}
+        }
+        Alleen het JSON object. Geen uitleg of markdown.
+        EOT;
 
-            // Verstuur verzoek naar OpenAI API met gpt-4o-mini model
+            // Verstuur verzoek naar OpenAI API met SSL-verificatie uitgeschakeld
             $response = Http::withToken(config('services.openai.key'))
+                ->withOptions(['verify' => false]) // SSL-verificatie uitschakelen
                 ->post('https://api.openai.com/v1/chat/completions', [
                     'model' => 'gpt-4o-mini',
                     'messages' => [
                         ['role' => 'system', 'content' => 'Je schrijft meertalige blogposts.'],
                         ['role' => 'user', 'content' => $prompt],
                     ],
-                    'temperature' => 0.5, // Lagere temperature voor meer voorspelbare output
+                    'temperature' => 0.5,
                 ]);
 
             // Verwerk de API-respons
@@ -120,7 +122,6 @@ class CreatePost extends Component
             }
 
             // Update de modelproperties met de gegenereerde waarden
-            // Fallback naar bestaande waarden als er iets misgaat
             $this->title_en = $json['en']['title'] ?? $this->title_en;
             $this->title_nl = $json['nl']['title'] ?? $this->title_nl;
             $this->title_fr = $json['fr']['title'] ?? $this->title_fr;
@@ -133,12 +134,13 @@ class CreatePost extends Component
 
             session()->flash('message', 'Titels en beschrijvingen succesvol gegenereerd!');
         } catch (\Exception $e) {
-            // Foutafhandeling: log de error en toon gebruikersmelding
+            // Foutafhandeling
             logger()->error('Fout bij generateContent(): ' . $e->getMessage());
             session()->flash('message', 'Er ging iets mis: ' . $e->getMessage());
             session()->flash('message_type', 'error');
         }
     }
+
 
     public function save()
     {
