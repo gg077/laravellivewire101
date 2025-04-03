@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\SocialiteController;
 use App\Livewire\Categories\CreateCategory;
 use App\Livewire\Categories\EditCategory;
@@ -20,7 +19,9 @@ use App\Livewire\Users\EditUser;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+use Livewire\Livewire;
 use Livewire\Volt\Volt;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),

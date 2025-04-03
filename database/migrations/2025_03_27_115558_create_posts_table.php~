@@ -14,9 +14,15 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('author_id')->constrained('users')->cascadeOnDelete();//auteur van de post
-            $table->string('title');
-            $table->text('content');
-            $table->string('slug')->unique();
+            $table->string('title_en');
+            $table->string('title_nl');
+            $table->string('title_fr');
+            $table->text('content_en');
+            $table->text('content_nl');
+            $table->text('content_fr');
+            $table->string('slug_en')->unique();
+            $table->string('slug_nl')->unique();
+            $table->string('slug_fr')->unique();
             $table->boolean('is_published')->default(false);
             $table->timestamps();
             $table->softDeletes();

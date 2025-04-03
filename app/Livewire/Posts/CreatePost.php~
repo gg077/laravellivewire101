@@ -84,6 +84,7 @@ class CreatePost extends Component
 
     public function save()
     {
+        dd($this->title_es);
         $this->slug_en = $this->generateUniqueSlug($this->title_en, 'slug_en');
         $this->slug_nl = $this->generateUniqueSlug($this->title_nl, 'slug_nl');
         $this->slug_fr = $this->generateUniqueSlug($this->title_fr, 'slug_fr');

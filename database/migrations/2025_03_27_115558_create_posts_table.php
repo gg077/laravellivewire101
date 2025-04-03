@@ -17,12 +17,15 @@ return new class extends Migration
             $table->string('title_en');
             $table->string('title_nl');
             $table->string('title_fr');
+            $table->string('title_es');
             $table->text('content_en');
             $table->text('content_nl');
             $table->text('content_fr');
+            $table->text('content_es');
             $table->string('slug_en')->unique();
             $table->string('slug_nl')->unique();
             $table->string('slug_fr')->unique();
+            $table->string('slug_es')->unique();
             $table->boolean('is_published')->default(false);
             $table->timestamps();
             $table->softDeletes();

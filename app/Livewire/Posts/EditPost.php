@@ -15,12 +15,15 @@ class EditPost extends Component
     public $title_en = '';
     public $title_nl = '';
     public $title_fr = '';
+    public $title_es = '';
     public $slug_en = '';
     public $slug_nl = '';
     public $slug_fr = '';
+    public $slug_es = '';
     public $content_en = '';
     public $content_nl = '';
     public $content_fr = '';
+    public $content_es = '';
     public $is_published = false;
     public $selectedCategories = [];
     public $allCategories = [];
@@ -30,12 +33,15 @@ class EditPost extends Component
             'title_en' => 'required|min:3',
             'title_nl' => 'required|min:3',
             'title_fr' => 'required|min:3',
+            'title_es' => 'required|min:3',
             'slug_en' => 'required|min:3|unique:posts,slug_en,'.$this->post->id,
             'slug_nl' => 'required|min:3|unique:posts,slug_nl,'.$this->post->id,
             'slug_fr' => 'required|min:3|unique:posts,slug_fr,'.$this->post->id,
+            'slug_es' => 'required|min:3|unique:posts,slug_fr,'.$this->post->id,
             'content_en' => 'required|min:10',
             'content_nl' => 'required|min:10',
             'content_fr' => 'required|min:10',
+            'content_es' => 'required|min:10',
             'is_published' => 'boolean',
             'selectedCategories' => 'array',
         ];
@@ -48,6 +54,8 @@ class EditPost extends Component
         'title_nl.min' => 'The Dutch title must be at least 3 characters long.',
         'title_fr.required' => 'The French title is required.',
         'title_fr.min' => 'The French title must be at least 3 characters long.',
+        'title_es.required' => 'The English title is required.',
+        'title_es.min' => 'The English title must be at least 3 characters long.',
         'slug_en.required' => 'The English slug is required.',
         'slug_en.min' => 'The English slug must be at least 3 characters.',
         'slug_en.unique' => 'The English slug must be unique.',
@@ -57,12 +65,16 @@ class EditPost extends Component
         'slug_fr.required' => 'The French slug is required.',
         'slug_fr.min' => 'The French slug must be at least 3 characters.',
         'slug_fr.unique' => 'The French slug must be unique.',
+        'slug_es.min' => 'The French slug must be at least 3 characters.',
+        'slug_es.unique' => 'The French slug must be unique.',
         'content_en.required' => 'The English content is required.',
         'content_en.min' => 'The English content must be at least 10 characters long.',
         'content_nl.required' => 'The Dutch content is required.',
         'content_nl.min' => 'The Dutch content must be at least 10 characters long.',
         'content_fr.required' => 'The French content is required.',
         'content_fr.min' => 'The French content must be at least 10 characters long.',
+        'content_es.required' => 'The French content is required.',
+        'content_es.min' => 'The French content must be at least 10 characters long.',
         'is_published.boolean' => 'The published status must be true or false.',
         'selectedCategories.array' => 'The selected categories must be an array.',
     ];
@@ -75,12 +87,15 @@ class EditPost extends Component
         $this->title_en = $post->title_en;
         $this->title_nl = $post->title_nl;
         $this->title_fr = $post->title_fr;
+        $this->title_es = $post->title_es;
         $this->slug_en = $post->slug_en;
         $this->slug_nl = $post->slug_nl;
         $this->slug_fr = $post->slug_fr;
+        $this->slug_es = $post->slug_es;
         $this->content_en = $post->content_en;
         $this->content_nl = $post->content_nl;
         $this->content_fr = $post->content_fr;
+        $this->content_es = $post->content_es;
         $this->is_published = $post->is_published;
 
         $this->selectedCategories = $post->categories()->pluck('categories.id')->toArray();
@@ -113,12 +128,15 @@ class EditPost extends Component
             'title_en' => $this->title_en,
             'title_nl' => $this->title_nl,
             'title_fr' => $this->title_fr,
+            'title_es' => $this->title_es,
             'slug_en' => $this->slug_en,
             'slug_nl' => $this->slug_nl,
             'slug_fr' => $this->slug_fr,
+            'slug_es' => $this->slug_es,
             'content_en' => $this->content_en,
             'content_nl' => $this->content_nl,
             'content_fr' => $this->content_fr,
+            'content_es' => $this->content_es,
             'is_published' => $this->is_published,
         ]);
 
