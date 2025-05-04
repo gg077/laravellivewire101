@@ -32,6 +32,9 @@ The project is divided into 8 modules, each with its own documentation:
 7. [Excel Translation Import](https://github.com/gg077/laravellivewire101/blob/main/documentation/README-7.md) - Importing translations from Excel files
 8. [Multilingual SEO Management](https://github.com/gg077/laravellivewire101/blob/main/documentation/README-8.md) - Managing SEO metadata per language
 
+Socialite / OpenAI Integration Follow This Link:
+https://www.notion.so/Laravellivewire101-Socialite-GPT-1e9fd85f65648092ac20d4eaa3f217d3?pvs=4
+
 ## Installation
 
 ```bash
