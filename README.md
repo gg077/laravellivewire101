@@ -31,6 +31,7 @@ The project is divided into 8 modules, each with its own documentation:
 6. [Inline Translation Editing](https://github.com/gg077/laravellivewire101/blob/main/documentation/README-6.md) - Advanced Livewire inline editing
 7. [Excel Translation Import](https://github.com/gg077/laravellivewire101/blob/main/documentation/README-7.md) - Importing translations from Excel files
 8. [Multilingual SEO Management](https://github.com/gg077/laravellivewire101/blob/main/documentation/README-8.md) - Managing SEO metadata per language
+9. [AI integration](https://www.notion.so/OpenAI-GPT-integratie-voor-automatische-blogposts-1e9fd85f656480d98fcee15b79185b40) - Integrating AI text generation
 
 Socialite / OpenAI Integration Follow This Link:
 https://www.notion.so/Laravellivewire101-Socialite-GPT-1e9fd85f65648092ac20d4eaa3f217d3?pvs=4
